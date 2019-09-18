@@ -3,4 +3,11 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="colorBtnLogIn">#FF5722</color>
+    <color name="colorBtnLoginFace">#2861AE</color>
+    <color name="colorBtnLoginTwitter">#9AD0ED</color>
+    <color name="colorBtnLoginGoogle">#D22A2D</color>
+    <color name="colorWhite">#FFFF</color>
+
+
 </resources>
