@@ -21,7 +21,6 @@ public class Login extends AppCompatActivity {
     private TextView esqueceuSenha;
     private Button logIn;
     private Button loginFace;
-    private Button loginTwitter;
     private Button loginGoogle;
 
 
@@ -36,7 +35,6 @@ public class Login extends AppCompatActivity {
         esqueceuSenha = findViewById(R.id.textViewEsqueceuSenha);
         logIn = findViewById(R.id.botaoLogin);
         loginFace = findViewById(R.id.botaoLoginFace);
-        loginTwitter = findViewById(R.id.botaoLoginTwhitter);
         loginGoogle = findViewById(R.id.botaoLoginGoogle);
 
 
