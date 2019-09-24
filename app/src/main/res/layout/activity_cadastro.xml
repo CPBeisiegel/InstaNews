@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".CadastroActivity"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/textViewPreencha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/Arvo-Regular"
+        android:fontFamily="@font/arvo_regular"
         android:gravity="center"
         android:text="Preencha seus dados."
         android:textSize="30sp"
@@ -179,9 +180,9 @@
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="52dp"
-        android:background="@color/colorBtnLogIn"
+        android:background="@color/colorPrimary"
         android:text="Registrar"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorTextIcons"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textYourEntryConfirmarSenha" />
 
@@ -192,9 +193,9 @@
         android:layout_marginTop="52dp"
         android:layout_marginEnd="52dp"
         android:layout_marginRight="52dp"
-        android:background="@color/colorBtnLogIn"
+        android:background="@color/colorPrimary"
         android:text="Cancelar"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorTextIcons"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textYourEntryConfirmarSenha" />
 

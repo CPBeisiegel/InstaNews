@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     public final Pattern textPattern = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).+$");
     private EditText usernameEditText;
@@ -61,7 +61,7 @@ public class Login extends AppCompatActivity {
         registro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                irParaRegistro();
+                startActivity(new Intent(LoginActivity.this, CadastroActivity.class));
             }
         });
 
@@ -100,16 +100,15 @@ public class Login extends AppCompatActivity {
 
     //***Confirmar o nome da tela de Home e concluir metodo
     public void irParaHome(){
-       // Intent intent = new Intent(this,Home.class);
-       // startActivity(intent);
+       //Intent intent = new Intent(this,Home.class);
+       //startActivity(intent);
     }
 
 
 
-    //***Confirmar o nome da tela de Cadastro e concluir metodo
+    //***Confirmar o nome da tela de CadastroActivity e concluir metodo
     public void irParaRegistro(){
-        //Intent intent = new Intent(this,Cadastro.class);
-        //startActivity(intent);
+        startActivity(new Intent(this, CadastroActivity.class));
     }
 
 
@@ -125,4 +124,4 @@ public class Login extends AppCompatActivity {
 
 //*Verificar alteração do TextView para Button o Registre-se e Esqueceu Senha
 //*Verificar a validação de senha = entre 6 e 14 caracteres com numeros, letras Maiuscula e Minuscula e simbolo
-//*Verificar barra titulo "Login to your app".
+//*Verificar barra titulo "LoginActivity to your app".

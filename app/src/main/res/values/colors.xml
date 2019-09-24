@@ -8,5 +8,9 @@
     <color name="colorDivider">#BDBDBD</color>
     <color name="colorLightPrimary">#FFCCBC</color>
     <color name="colorTextIcons">#FFFFFF</color>
+    <color name="colorLoginFace">#2861AE</color>
+    <color name="colorLoginGmail">#D22A2D</color>
+
+
 
 </resources>

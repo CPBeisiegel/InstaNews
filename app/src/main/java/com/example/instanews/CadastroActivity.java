@@ -7,18 +7,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Cadastro extends AppCompatActivity {
+public class CadastroActivity extends AppCompatActivity {
 
     public final Pattern textPattern = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).+$");
-    private EditText editTextNome;
-    private EditText editTextEmail;
-    private EditText editTextSenha;
-    private EditText editTextConfirmarSenha;
+    private TextInputLayout editTextNome;
+    private TextInputLayout editTextEmail;
+    private TextInputLayout editTextSenha;
+    private TextInputLayout editTextConfirmarSenha;
     private Button btnRegistrar;
     private Button btnCancelar;
 
@@ -27,10 +28,10 @@ public class Cadastro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
 
-        editTextNome = findViewById(R.id.editTextNome);
-        editTextEmail = findViewById(R.id.editTextEmail);
-        editTextSenha = findViewById(R.id.editTextSenha);
-        editTextConfirmarSenha = findViewById(R.id.editTextConfirmarSenha);
+        editTextNome = findViewById(R.id.textYourEntryNome);
+        editTextEmail = findViewById(R.id.textYourEntryEmail);
+        editTextSenha = findViewById(R.id.textYourEntrySenha);
+        editTextConfirmarSenha = findViewById(R.id.textYourEntryConfirmarSenha);
         btnCancelar = findViewById(R.id.buttonCancelar);
         btnRegistrar = findViewById(R.id.buttonRegistrar);
 
@@ -42,15 +43,15 @@ public class Cadastro extends AppCompatActivity {
                 editTextSenha.setError(null);
                 editTextConfirmarSenha.setError(null);
 
-                if (editTextNome.getEditableText().toString().equals("")) {
+                if (editTextNome.getEditText().toString().equals("")) {
                     editTextNome.setError("Informe seu nome.");
-                } else if (editTextEmail.getEditableText().toString().equals("")) {
+                } else if (editTextEmail.getEditText().toString().equals("")) {
                     editTextEmail.setError("Informe seu e-mail.");
-                } else if (!emailInvalido(editTextEmail.getEditableText().toString())) {
+                } else if (!emailInvalido(editTextEmail.getEditText().toString())) {
                     editTextEmail.setError("E-mail digitado incorretamente.");
-                } else if (editTextSenha.getEditableText().toString().equals("")) {
+                } else if (editTextSenha.getEditText().toString().equals("")) {
                     editTextConfirmarSenha.setError("Informe sua senha.");
-                } else if (!senhaValida(editTextSenha.getEditableText().toString())) {
+                } else if (!senhaValida(editTextSenha.getEditText().toString())) {
                     editTextSenha.setError("Senha deve ter entre 6 e 14 caracteres");
                 } else {
                     irParaHome();
@@ -94,8 +95,8 @@ public class Cadastro extends AppCompatActivity {
     }
 
     public void irParaLogin(){
-        // Intent intent = new Intent(this,Home.class);
-        // startActivity(intent);
+         Intent intent = new Intent(this, LoginActivity.class);
+         startActivity(intent);
     }
 
 
