@@ -7,6 +7,10 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <TextView
         android:id="@+id/textViewLogimApp"
         android:layout_width="match_parent"
@@ -165,5 +169,5 @@
         app:layout_constraintTop_toBottomOf="@+id/botaoLoginFace" />
 
 
-
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
