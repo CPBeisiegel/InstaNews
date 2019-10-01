@@ -7,6 +7,10 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <TextView
         android:id="@+id/textViewLogimApp"
         android:layout_width="match_parent"
@@ -23,7 +27,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutEmail"
-        android:layout_width="395dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -44,7 +48,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutPassword"
-        android:layout_width="395dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -59,6 +63,7 @@
             android:id="@+id/textInputEditTextPassswordDigitado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
             android:hint="@string/login_password" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -120,7 +125,7 @@
         android:layout_marginTop="54dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text=" ---------- OR ---------- "
+        android:text=" ---------- OU ---------- "
         android:textAlignment="center"
         android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -164,5 +169,5 @@
         app:layout_constraintTop_toBottomOf="@+id/botaoLoginFace" />
 
 
-
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
