@@ -1,4 +1,4 @@
-package com.example.instanews;
+package com.example.instanews.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.example.instanews.R;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -39,7 +41,7 @@ public class SplashActivity extends AppCompatActivity {
 
     private void jump(){
         timer.cancel();
-        startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+        startActivity(new Intent(SplashActivity.this, HomeActivity.class));
         finish();
     }
 }

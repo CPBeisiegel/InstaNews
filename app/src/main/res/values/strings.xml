@@ -7,4 +7,15 @@
     <string name="login_with_facebook">LOGIN WITH FACEBOOK</string>
     <string name="login_with_twitter">LOGIN WITH TWITTER</string>
     <string name="login_with_google">LOGIN WITH GOOGLE</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="addnav">addnav</string>
+    <string name="pesquisanav">addpesquisa</string>
+    <string name="homenav">homenav</string>
+    <string name="favoritosnav">favoritosnav</string>
+    <string name="perfilnav">perfilnav</string>
+    <string name="descricao">descricao</string>
+    <string name="tituloviagem">tituloviagem</string>
+
 </resources>
