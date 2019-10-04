@@ -7,7 +7,7 @@
     tools:context=".activity.RecyclerViewActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listamusicas"
+        android:id="@+id/listaviagem"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
