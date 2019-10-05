@@ -30,123 +30,168 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/imageButtonSaude"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:tint="#E64A19"
-        app:srcCompat="@drawable/saude"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="175dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_marginTop="32dp"
         android:scaleType="fitStart"
         android:tint="#E64A19"
-        app:srcCompat="@drawable/musica"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="432dp" />
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonCasa"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonMundo"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitulo"
+        app:srcCompat="@drawable/saude" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/imageButtonMusica"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
         android:scaleType="fitStart"
         android:tint="#E64A19"
-        app:srcCompat="@drawable/comida"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="303dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonComida"
+        app:srcCompat="@drawable/musica" />
 
     <ImageButton
-        android:id="@+id/imageButton7"
+        android:id="@+id/imageButtonComida"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
         android:scaleType="fitStart"
         android:tint="#E64A19"
-        app:srcCompat="@drawable/casa"
-        tools:layout_editor_absoluteX="245dp"
-        tools:layout_editor_absoluteY="181dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonMundo"
+        app:srcCompat="@drawable/comida" />
 
     <ImageButton
-        android:id="@+id/imageButton8"
+        android:id="@+id/imageButtonCasa"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:scaleType="fitStart"
         android:tint="#E64A19"
-        app:srcCompat="@drawable/ciencia"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="314dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitulo"
+        app:srcCompat="@drawable/casa" />
 
     <ImageButton
-        android:id="@+id/imageButton9"
+        android:id="@+id/imageButtonCiencia"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginTop="32dp"
         android:scaleType="fitStart"
         android:tint="#E64A19"
-        app:srcCompat="@drawable/moda"
-        tools:layout_editor_absoluteX="267dp"
-        tools:layout_editor_absoluteY="314dp" />
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonModa"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonComida"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonSaude"
+        app:srcCompat="@drawable/ciencia" />
 
     <ImageButton
-        android:id="@+id/imageButton10"
+        android:id="@+id/imageButtonModa"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:scaleType="fitStart"
         android:tint="#E64A19"
-        app:srcCompat="@drawable/filme"
-        tools:layout_editor_absoluteX="165dp"
-        tools:layout_editor_absoluteY="432dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonCasa"
+        app:srcCompat="@drawable/moda" />
 
     <ImageButton
-        android:id="@+id/imageButton11"
+        android:id="@+id/imageButtonFilme"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginTop="32dp"
         android:scaleType="fitStart"
         android:tint="#E64A19"
-        app:srcCompat="@drawable/beleza"
-        tools:layout_editor_absoluteX="286dp"
-        tools:layout_editor_absoluteY="429dp" />
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonBeleza"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonMusica"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonCiencia"
+        app:srcCompat="@drawable/filme" />
 
     <ImageButton
-        android:id="@+id/imageButton12"
+        android:id="@+id/imageButtonBeleza"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:scaleType="fitStart"
         android:tint="#E64A19"
-        app:srcCompat="@drawable/cultura"
-        tools:layout_editor_absoluteX="49dp"
-        tools:layout_editor_absoluteY="554dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonModa"
+        app:srcCompat="@drawable/beleza" />
 
     <ImageButton
-        android:id="@+id/imageButton13"
+        android:id="@+id/imageButtonCultura"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
         android:scaleType="fitStart"
         android:tint="#E64A19"
-        app:srcCompat="@drawable/viagem"
-        tools:layout_editor_absoluteX="167dp"
-        tools:layout_editor_absoluteY="558dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonMusica"
+        app:srcCompat="@drawable/cultura" />
 
     <ImageButton
-        android:id="@+id/imageButton14"
+        android:id="@+id/imageButtonViagen"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginTop="32dp"
         android:scaleType="fitStart"
         android:tint="#E64A19"
-        app:srcCompat="@drawable/esporte"
-        tools:layout_editor_absoluteX="289dp"
-        tools:layout_editor_absoluteY="562dp" />
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonEsporte"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonCultura"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonFilme"
+        app:srcCompat="@drawable/viagem" />
 
     <ImageButton
-        android:id="@+id/imageButton15"
+        android:id="@+id/imageButtonEsporte"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:scaleType="fitStart"
         android:tint="#E64A19"
-        app:srcCompat="@drawable/mundo"
-        tools:layout_editor_absoluteX="38dp"
-        tools:layout_editor_absoluteY="181dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonBeleza"
+        app:srcCompat="@drawable/esporte" />
+
+    <ImageButton
+        android:id="@+id/imageButtonMundo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:scaleType="fitStart"
+        android:tint="#E64A19"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitulo"
+        app:srcCompat="@drawable/mundo" />
+
+    <Button
+        android:id="@+id/buttonProximo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#E64A19"
+        android:text="Próximo ->"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonEsporte" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
