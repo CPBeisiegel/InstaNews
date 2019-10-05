@@ -5,8 +5,148 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/textViewTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/colorPrimary"
+        android:gravity="left|center"
+        android:lineSpacingMultiplier="1.3"
+        android:padding="8dp"
+        android:text="Conte pra gente quais são seus interesses"
+        android:textAlignment="center"
+        android:textColor="@color/colorTextIcons"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:tint="#E64A19"
+        app:srcCompat="@drawable/saude"
+        tools:layout_editor_absoluteX="138dp"
+        tools:layout_editor_absoluteY="175dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="fitStart"
+        android:tint="#E64A19"
+        app:srcCompat="@drawable/musica"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="432dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="fitStart"
+        android:tint="#E64A19"
+        app:srcCompat="@drawable/comida"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="303dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="fitStart"
+        android:tint="#E64A19"
+        app:srcCompat="@drawable/casa"
+        tools:layout_editor_absoluteX="245dp"
+        tools:layout_editor_absoluteY="181dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="fitStart"
+        android:tint="#E64A19"
+        app:srcCompat="@drawable/ciencia"
+        tools:layout_editor_absoluteX="153dp"
+        tools:layout_editor_absoluteY="314dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton9"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="fitStart"
+        android:tint="#E64A19"
+        app:srcCompat="@drawable/moda"
+        tools:layout_editor_absoluteX="267dp"
+        tools:layout_editor_absoluteY="314dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton10"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="fitStart"
+        android:tint="#E64A19"
+        app:srcCompat="@drawable/filme"
+        tools:layout_editor_absoluteX="165dp"
+        tools:layout_editor_absoluteY="432dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton11"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="fitStart"
+        android:tint="#E64A19"
+        app:srcCompat="@drawable/beleza"
+        tools:layout_editor_absoluteX="286dp"
+        tools:layout_editor_absoluteY="429dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton12"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="fitStart"
+        android:tint="#E64A19"
+        app:srcCompat="@drawable/cultura"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="554dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton13"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="fitStart"
+        android:tint="#E64A19"
+        app:srcCompat="@drawable/viagem"
+        tools:layout_editor_absoluteX="167dp"
+        tools:layout_editor_absoluteY="558dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton14"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="fitStart"
+        android:tint="#E64A19"
+        app:srcCompat="@drawable/esporte"
+        tools:layout_editor_absoluteX="289dp"
+        tools:layout_editor_absoluteY="562dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton15"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="fitStart"
+        android:tint="#E64A19"
+        app:srcCompat="@drawable/mundo"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="181dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
