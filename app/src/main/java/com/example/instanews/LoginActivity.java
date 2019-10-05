@@ -53,7 +53,8 @@ public class LoginActivity extends AppCompatActivity {
                 }else if (!senhaValida(passwordEditText.getEditableText().toString())){
                     passwordEditText.setError("Senha deve ter entre 6 e 14 caracteres");
                 }else {
-                    irParaHome();
+                   // irParaHome();
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 }
             }
         });
@@ -100,8 +101,9 @@ public class LoginActivity extends AppCompatActivity {
 
     //***Confirmar o nome da tela de Home e concluir metodo
     public void irParaHome(){
-       //Intent intent = new Intent(this,Home.class);
-       //startActivity(intent);
+
+        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+
     }
 
 
