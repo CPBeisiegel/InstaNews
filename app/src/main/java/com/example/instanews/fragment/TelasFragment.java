@@ -37,6 +37,8 @@ public class TelasFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_telas, container, false);
 
+
+
         imgViagem = view.findViewById(R.id.imagemview);
         txtTitulo = view.findViewById(R.id.tituloviagem_id);
         txtDescricao = view.findViewById(R.id.descricao_id);
