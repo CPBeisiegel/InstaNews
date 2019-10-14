@@ -19,4 +19,12 @@
     <string name="tituloviagem">Título viagem</string>
     <string name="pesquisa">Pesquisa</string>
 
+    <string name="corpoTexto1">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</string>
+    <string name="fonteNoticia">FOLHA DE SÃO PAULO - 21/09/2019</string>
+    <string name="TituloNoticia1">Procuradores discutem boicote de cargos em futura gestão da PGR</string>
+    <string name="SignoTitulo">Signo</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="explorar_assuntos">Explorar Assuntos</string>
 </resources>

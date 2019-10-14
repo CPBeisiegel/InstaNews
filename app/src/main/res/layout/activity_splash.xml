@@ -8,6 +8,7 @@
     tools:context=".activity.SplashActivity">
 
 
+
     <ImageView
         android:id="@+id/imagemlogo"
         android:layout_width="wrap_content"
