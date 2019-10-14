@@ -9,13 +9,14 @@
     <string name="login_with_google">LOGIN WITH GOOGLE</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="addnav">addnav</string>
-    <string name="pesquisanav">addpesquisa</string>
-    <string name="homenav">homenav</string>
-    <string name="favoritosnav">favoritosnav</string>
-    <string name="perfilnav">perfilnav</string>
-    <string name="descricao">descricao</string>
-    <string name="tituloviagem">tituloviagem</string>
+    <string name="Favoritos">FAVORITOS</string>
+    <string name="addnav">Adicionar</string>
+    <string name="pesquisanav">Pesquisa</string>
+    <string name="homenav">Home</string>
+    <string name="favoritosnav">Favoritos</string>
+    <string name="perfilnav">Perfil</string>
+    <string name="descricao">Descrição</string>
+    <string name="tituloviagem">Título viagem</string>
+    <string name="pesquisa">Pesquisa</string>
 
 </resources>

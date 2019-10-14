@@ -14,10 +14,10 @@ import com.example.instanews.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TesteFragment extends Fragment {
+public class FavoFragment extends Fragment {
 
 
-    public TesteFragment() {
+    public FavoFragment() {
         // Required empty public constructor
     }
 
@@ -26,7 +26,7 @@ public class TesteFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_teste, container, false);
+        View view = inflater.inflate(R.layout.fragment_favo, container, false);
 
     return view;
     }

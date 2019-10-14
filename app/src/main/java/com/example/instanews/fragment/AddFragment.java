@@ -18,7 +18,7 @@ import com.example.instanews.R;
  * A simple {@link Fragment} subclass.
  */
 
-public class TelasFragment extends Fragment {
+public class AddFragment extends Fragment {
     private static final String TITULO = "titulo";
     private static final String DESCRICAO = "descricao";
     private static final String IMAGEM = "imagem";
@@ -27,7 +27,7 @@ public class TelasFragment extends Fragment {
     private ImageView imgViagem;
 
 
-    public TelasFragment() {
+    public AddFragment() {
         // Required empty public constructor
     }
 
@@ -35,7 +35,7 @@ public class TelasFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_telas, container, false);
+        View view = inflater.inflate(R.layout.fragment_add, container, false);
 
 
 
@@ -62,7 +62,7 @@ public class TelasFragment extends Fragment {
 
     public static Fragment novaInstancia(int imagem, String titulo, String descricao) {
 
-        TelasFragment telasFragment = new TelasFragment();
+        AddFragment telasFragment = new AddFragment();
         Bundle bundle = new Bundle();
 
         bundle.putInt(IMAGEM, imagem);

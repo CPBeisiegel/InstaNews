@@ -8,15 +8,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.viewpager.widget.ViewPager;
 
 import com.example.instanews.R;
-import com.example.instanews.fragment.TelasFragment;
-import com.example.instanews.fragment.TesteFragment;
+import com.example.instanews.fragment.AddFragment;
+import com.example.instanews.fragment.FavoFragment;
+import com.example.instanews.fragment.PesquisaFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -30,17 +27,18 @@ public class HomeActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.buttonnavigation);
 
 
-
-
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.nav_add:
-                        replaceFragment(R.id.container1, new TelasFragment());
+                        replaceFragment(R.id.container1, new AddFragment());
                         return true;
                     case R.id.nav_fav:
-                        replaceFragment(R.id.container1, new TesteFragment());
+                        replaceFragment(R.id.container1, new FavoFragment());
+                        return true;
+                    case R.id.nav_pesquisa:
+                        replaceFragment(R.id.container1, new PesquisaFragment());
                         return true;
                 }
 
@@ -49,37 +47,11 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    private void replaceFragment(int container, Fragment fragment){
+    private void replaceFragment(int container, Fragment fragment) {
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.replace(container, fragment);
         transaction.commit();
     }
-
-
-//    public class PageChange implements ViewPager.OnPageChangeListener {
-//        @Override
-//        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-//        }
-//
-//        @Override
-//        public void onPageSelected(int position) {
-//            switch (position) {
-//                case 0:
-//                    navigationView.setSelectedItemId(R.id.nav_add);
-//                    break;
-//                case 1:
-//                    navigationView.setSelectedItemId(R.id.nav_fav);
-//                    break;
-//                case 2:
-//                    navigationView.setSelectedItemId(R.id.nav_home);
-//                    break;
-//            }
-//        }
-//
-//        @Override
-//        public void onPageScrollStateChanged(int state) {
-//        }
-//    }
 
 }
