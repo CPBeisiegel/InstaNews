@@ -4,16 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".activity.CadastroActivity"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/textViewPreencha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/arvo_regular"
         android:gravity="center"
         android:text="Preencha seus dados."
-        android:fontFamily="Monteserrat"
         android:textSize="30sp"
+        app:fontFamily="sans-serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -53,7 +55,7 @@
             android:id="@+id/editTextNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Your Entry"
+            android:hint="Digite seu nome"
             app:layout_constraintTop_toBottomOf="@+id/textViewNome"
             tools:layout_editor_absoluteX="0dp" />
 
@@ -91,7 +93,7 @@
             android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Your Entry" />
+            android:hint="Digite seu email" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -130,7 +132,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:hint="Your Entry" />
+            android:inputType="textPassword"
+            android:hint="Digite sua senha" />
 
 </com.google.android.material.textfield.TextInputLayout>
 
@@ -167,34 +170,38 @@
         android:id="@+id/editTextConfirmarSenha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Your Entry" />
+        android:inputType="textPassword"
+        android:hint="Confirme sua senha" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/buttonRegistrar"
-        android:layout_width="150dp"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
         android:background="@color/colorPrimary"
         android:text="Registrar"
         android:textColor="@color/colorTextIcons"
+        app:layout_constraintEnd_toStartOf="@+id/buttonCancelar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textYourEntryConfirmarSenha" />
 
     <Button
         android:id="@+id/buttonCancelar"
-        android:layout_width="150dp"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="0dp"
         android:background="@color/colorPrimary"
         android:text="Cancelar"
         android:textColor="@color/colorTextIcons"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonRegistrar"
         app:layout_constraintTop_toBottomOf="@+id/textYourEntryConfirmarSenha" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

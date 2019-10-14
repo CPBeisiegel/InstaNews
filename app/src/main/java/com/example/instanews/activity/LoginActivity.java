@@ -1,4 +1,4 @@
-package com.example.instanews;
+package com.example.instanews.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.instanews.R;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -53,7 +55,8 @@ public class LoginActivity extends AppCompatActivity {
                 }else if (!senhaValida(passwordEditText.getEditableText().toString())){
                     passwordEditText.setError("Senha deve ter entre 6 e 14 caracteres");
                 }else {
-                    irParaHome();
+                   // irParaHome();
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 }
             }
         });
@@ -100,8 +103,9 @@ public class LoginActivity extends AppCompatActivity {
 
     //***Confirmar o nome da tela de Home e concluir metodo
     public void irParaHome(){
-       //Intent intent = new Intent(this,Home.class);
-       //startActivity(intent);
+
+        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+
     }
 
 
