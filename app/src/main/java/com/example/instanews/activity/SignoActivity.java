@@ -1,8 +1,10 @@
-package com.example.instanews;
+package com.example.instanews.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.instanews.R;
 
 public class SignoActivity extends AppCompatActivity {
 
