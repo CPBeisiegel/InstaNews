@@ -19,6 +19,7 @@ public class SearchFragment extends Fragment {
 
 
 
+    
     public SearchFragment() {
         // Required empty public constructor
     }
