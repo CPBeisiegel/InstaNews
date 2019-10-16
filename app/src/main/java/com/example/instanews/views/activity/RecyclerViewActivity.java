@@ -1,14 +1,16 @@
-package com.example.instanews;
+package com.example.instanews.views.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class NoticiaActivity extends AppCompatActivity {
+import com.example.instanews.R;
+
+public class RecyclerViewActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_noticia);
+        setContentView(R.layout.navigation_activity);
     }
 }

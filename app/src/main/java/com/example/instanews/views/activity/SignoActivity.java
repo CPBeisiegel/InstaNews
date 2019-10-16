@@ -1,4 +1,4 @@
-package com.example.instanews.activity;
+package com.example.instanews.views.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.instanews.R;
 
-public class RecyclerViewActivity extends AppCompatActivity {
+public class SignoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.navigation_activity);
+        setContentView(R.layout.activity_signo);
     }
 }

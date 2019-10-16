@@ -1,4 +1,4 @@
-package com.example.instanews.activity;
+package com.example.instanews.views.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

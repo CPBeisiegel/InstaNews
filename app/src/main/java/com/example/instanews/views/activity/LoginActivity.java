@@ -1,6 +1,4 @@
-package com.example.instanews.activity;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.instanews.views.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.instanews.R;
 
@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
                 }else if (!senhaValida(passwordEditText.getEditableText().toString())){
                     passwordEditText.setError("Senha deve ter entre 6 e 14 caracteres");
                 }else {
-                   // irParaHome();
+                    // irParaHome();
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 }
             }
@@ -125,7 +125,4 @@ public class LoginActivity extends AppCompatActivity {
 
 
 }
-
-//*Verificar alteração do TextView para Button o Registre-se e Esqueceu Senha
-//*Verificar a validação de senha = entre 6 e 14 caracteres com numeros, letras Maiuscula e Minuscula e simbolo
 //*Verificar barra titulo "LoginActivity to your app".

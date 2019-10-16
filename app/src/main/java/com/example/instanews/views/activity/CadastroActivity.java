@@ -1,4 +1,4 @@
-package com.example.instanews.activity;
+package com.example.instanews.views.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,12 +10,9 @@ import android.widget.Button;
 import com.example.instanews.R;
 import com.google.android.material.textfield.TextInputLayout;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class CadastroActivity extends AppCompatActivity {
 
-    public final Pattern textPattern = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).+$");
+   // public final Pattern textPattern = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).+$");
     private TextInputLayout editTextNome;
     private TextInputLayout editTextEmail;
     private TextInputLayout editTextSenha;
@@ -47,12 +44,8 @@ public class CadastroActivity extends AppCompatActivity {
                     editTextNome.setError("Informe seu nome.");
                 } else if (editTextEmail.getEditText().toString().equals("")) {
                     editTextEmail.setError("Informe seu e-mail.");
-                } else if (!emailInvalido(editTextEmail.getEditText().toString())) {
-                    editTextEmail.setError("E-mail digitado incorretamente.");
                 } else if (editTextSenha.getEditText().toString().equals("")) {
                     editTextConfirmarSenha.setError("Informe sua senha.");
-                } else if (!senhaValida(editTextSenha.getEditText().toString())) {
-                    editTextSenha.setError("Senha deve ter entre 6 e 14 caracteres");
                 } else {
                     irParaHome();
                 }
@@ -69,29 +62,29 @@ public class CadastroActivity extends AppCompatActivity {
     }
 
     // conferir se o formato da senha é valido
-    private boolean senhaValida(String senha) {
-        senha = senha.trim();
-        return senha.length() >= 6 && senha.length() < 14 && textPattern.matcher(senha).matches();
-    }
+//    private boolean senhaValida(String senha) {
+//        senha = senha.trim();
+//        return senha.length() >= 6 && senha.length() < 14 ;
+//    }
 
     // conferir se o email é invalido
-    public static boolean emailInvalido(String email) {
-        boolean isEmailIdValid = false;
-        if (email != null && email.length() > 0) {
-            String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
-            Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
-            Matcher matcher = pattern.matcher(email);
-            if (matcher.matches()) {
-                isEmailIdValid = true;
-            }
-        }
-        return isEmailIdValid;
-    }
+//    public static boolean emailInvalido(String email) {
+//        boolean isEmailIdValid = false;
+//        if (email != null && email.length() > 0) {
+//            String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+//            Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+//            Matcher matcher = pattern.matcher(email);
+//            if (matcher.matches()) {
+//                isEmailIdValid = true;
+//            }
+//        }
+//        return isEmailIdValid;
+//    }
 
     //***Confirmar o nome da tela de Home e concluir metodo
     public void irParaHome(){
-        // Intent intent = new Intent(this,Home.class);
-        // startActivity(intent);
+         Intent intent = new Intent(this,HomeActivity.class);
+         startActivity(intent);
     }
 
     public void irParaLogin(){

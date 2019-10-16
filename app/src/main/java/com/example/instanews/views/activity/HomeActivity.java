@@ -1,4 +1,4 @@
-package com.example.instanews.activity;
+package com.example.instanews.views.activity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.instanews.fragment.PerfilFragment;
 import com.example.instanews.R;
 import com.example.instanews.fragment.AddFragment;
 import com.example.instanews.fragment.FavoFragment;
@@ -39,6 +40,9 @@ public class HomeActivity extends AppCompatActivity {
                         return true;
                     case R.id.nav_pesquisa:
                         replaceFragment(R.id.container1, new PesquisaFragment());
+                        return true;
+                    case R.id.nav_perfil:
+                        replaceFragment(R.id.container1, new PerfilFragment());
                         return true;
                 }
 
