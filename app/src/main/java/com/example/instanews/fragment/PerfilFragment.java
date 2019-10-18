@@ -1,6 +1,7 @@
 package com.example.instanews.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import com.example.instanews.Interface.RecyclerViewOnClick;
 import com.example.instanews.R;
 import com.example.instanews.adapter.HomeAdapter;
 import com.example.instanews.model.Noticias;
+import com.example.instanews.views.activity.NoticiaActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +43,8 @@ public class PerfilFragment extends Fragment {
         RecyclerViewOnClick listener = new RecyclerViewOnClick() {
             @Override
             public void onClick(Noticias noticias) {
+                Intent intent = new Intent(getActivity(), NoticiaActivity.class);
+                startActivity(intent);
 
             }
         };
@@ -52,10 +56,10 @@ public class PerfilFragment extends Fragment {
         listanoticia.add(new Noticias(R.drawable.foto_noticia1, "Titulo Teste", "Descrição teste"));
         listanoticia.add(new Noticias(R.drawable.foto_noticia1, "Titulo Teste", "Descrição teste"));
         listanoticia.add(new Noticias(R.drawable.foto_noticia1, "Titulo Teste", "Descrição teste"));
+
         HomeAdapter adapter = new HomeAdapter(listanoticia, listener);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
 
         return view;
     }

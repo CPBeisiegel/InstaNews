@@ -1,6 +1,7 @@
 package com.example.instanews.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import com.example.instanews.Interface.RecyclerViewOnClick;
 import com.example.instanews.R;
 import com.example.instanews.adapter.HomeAdapter;
 import com.example.instanews.model.Noticias;
+import com.example.instanews.views.activity.NoticiaActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,9 +26,6 @@ import java.util.List;
  */
 
 public class AddFragment extends Fragment {
-    private static final String TITULO = "titulo";
-    private static final String DESCRICAO = "descricao";
-    private static final String IMAGEM = "imagem";
     private RecyclerView recyclerView;
 
     public AddFragment() {
@@ -43,6 +42,8 @@ public class AddFragment extends Fragment {
         RecyclerViewOnClick listener = new RecyclerViewOnClick() {
             @Override
             public void onClick(Noticias noticias) {
+                Intent intent = new Intent(getActivity(), NoticiaActivity.class);
+                startActivity(intent);
 
             }
         };
@@ -61,21 +62,6 @@ public class AddFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         return view;
-    }
-
-
-    public static Fragment novaInstancia(int imagem, String titulo, String descricao) {
-
-        AddFragment telasFragment = new AddFragment();
-        Bundle bundle = new Bundle();
-
-        bundle.putInt(IMAGEM, imagem);
-        bundle.putString(TITULO, titulo);
-        bundle.putString(DESCRICAO, descricao);
-
-        telasFragment.setArguments(bundle);
-
-        return telasFragment;
     }
 
 }
