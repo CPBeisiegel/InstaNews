@@ -41,7 +41,7 @@ public class SplashActivity extends AppCompatActivity {
 
     private void jump(){
         timer.cancel();
-        startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+        startActivity(new Intent(SplashActivity.this, LoginActivity.class));
         finish();
     }
 }

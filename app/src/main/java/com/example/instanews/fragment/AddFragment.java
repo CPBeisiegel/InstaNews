@@ -1,17 +1,22 @@
 package com.example.instanews.fragment;
 
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.instanews.Interface.RecyclerViewOnClick;
 import com.example.instanews.R;
+import com.example.instanews.adapter.HomeAdapter;
+import com.example.instanews.model.Noticias;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -22,10 +27,7 @@ public class AddFragment extends Fragment {
     private static final String TITULO = "titulo";
     private static final String DESCRICAO = "descricao";
     private static final String IMAGEM = "imagem";
-    private TextView txtTitulo;
-    private TextView txtDescricao;
-    private ImageView imgViagem;
-
+    private RecyclerView recyclerView;
 
     public AddFragment() {
         // Required empty public constructor
@@ -37,28 +39,30 @@ public class AddFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_add, container, false);
 
+        recyclerView = view.findViewById(R.id.fragmentlist_add);
+        RecyclerViewOnClick listener = new RecyclerViewOnClick() {
+            @Override
+            public void onClick(Noticias noticias) {
+
+            }
+        };
 
 
-        imgViagem = view.findViewById(R.id.imagemview);
-        txtTitulo = view.findViewById(R.id.tituloviagem_id);
-        txtDescricao = view.findViewById(R.id.descricao_id);
-
-        if (getArguments() != null) {
-
-            int imagemRecebida = getArguments().getInt(IMAGEM);
-            String tituloRecebido = getArguments().getString(TITULO);
-            String descricaoRecebida = getArguments().getString(DESCRICAO);
-
-            Drawable drawable = getResources().getDrawable(imagemRecebida);
-
-            imgViagem.setImageDrawable(drawable);
-            txtTitulo.setText(tituloRecebido);
-            txtDescricao.setText(descricaoRecebida);
-
-        }
+        List<Noticias> listanoticia = new ArrayList<>();
+        listanoticia.add(new Noticias(R.drawable.foto_noticia1, "Titulo Teste", "Descrição teste"));
+        listanoticia.add(new Noticias(R.drawable.foto_noticia1, "Titulo Teste", "Descrição teste"));
+        listanoticia.add(new Noticias(R.drawable.foto_noticia1, "Titulo Teste", "Descrição teste"));
+        listanoticia.add(new Noticias(R.drawable.foto_noticia1, "Titulo Teste", "Descrição teste"));
+        listanoticia.add(new Noticias(R.drawable.foto_noticia1, "Titulo Teste", "Descrição teste"));
+        listanoticia.add(new Noticias(R.drawable.foto_noticia1, "Titulo Teste", "Descrição teste"));
+        listanoticia.add(new Noticias(R.drawable.foto_noticia1, "Titulo Teste", "Descrição teste"));
+        HomeAdapter adapter = new HomeAdapter(listanoticia, listener);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         return view;
     }
+
 
     public static Fragment novaInstancia(int imagem, String titulo, String descricao) {
 

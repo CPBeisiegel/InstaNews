@@ -7,7 +7,7 @@
     tools:context=".views.activity.RecyclerViewActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listaviagem"
+        android:id="@+id/fragmentlist_add"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
