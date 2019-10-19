@@ -17,6 +17,7 @@
         <activity android:name=".views.activity.NoticiaActivity" />
         <activity android:name=".views.activity.LoginActivity" />
         <activity android:name=".views.activity.SplashActivity">
+          
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
