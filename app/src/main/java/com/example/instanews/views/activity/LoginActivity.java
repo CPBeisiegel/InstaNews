@@ -16,7 +16,10 @@ import java.util.regex.Pattern;
 
 public class LoginActivity extends AppCompatActivity {
 
-    public final Pattern textPattern = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).+$");
+    private static final String EMAIL_PATTERN = "^[a-zA-Z0-9#_~!$&'()*+,;=:.\"(),:;<>@\\[\\]\\\\]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*$";
+    private Pattern pattern = Pattern.compile(EMAIL_PATTERN);
+    private Matcher matcher;
+    //public final Pattern textPattern = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).+$");
     private EditText usernameEditText;
     private EditText passwordEditText;
     private TextView registro;
@@ -24,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button logIn;
     private Button loginFace;
     private Button loginGoogle;
+    private String email, senha;
 
 
     @Override
@@ -31,14 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        usernameEditText = findViewById(R.id.textInputEditTextUsernameDigitado);
-        passwordEditText = findViewById(R.id.textInputEditTextPassswordDigitado);
-        registro = findViewById(R.id.textViewRegistro);
-        esqueceuSenha = findViewById(R.id.textViewEsqueceuSenha);
-        logIn = findViewById(R.id.botaoLogin);
-        loginFace = findViewById(R.id.botaoLoginFace);
-        loginGoogle = findViewById(R.id.botaoLoginGoogle);
-
+        initViews();
 
         logIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,83 +43,74 @@ public class LoginActivity extends AppCompatActivity {
                 usernameEditText.setError(null);
                 passwordEditText.setError(null);
 
-                if (usernameEditText.getEditableText().toString().equals("")){
-                    usernameEditText.setError("Informe seu e-mail.");
-                }else if (!emailInvalido(usernameEditText.getEditableText().toString())){
-                    usernameEditText.setError("E-mail digitado incorretamente.");
-                }else if(passwordEditText.getEditableText().toString().equals("")){
-                    passwordEditText.setError("Informe sua senha.");
-                }else if (!senhaValida(passwordEditText.getEditableText().toString())){
-                    passwordEditText.setError("Senha deve ter entre 6 e 14 caracteres");
-                }else {
-                    // irParaHome();
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                }
+                validarCampos();
             }
         });
 
         registro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, CadastroActivity.class));
+                irParaRegistro();
             }
         });
 
         esqueceuSenha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                esqueceuSenha();
+                irParaRegistro();
             }
         });
     }
 
 
+    public void validarCampos() {
+        usernameEditText.setError(null);
+        passwordEditText.setError(null);
 
+        email = usernameEditText.getText().toString().trim();
+        senha = passwordEditText.getText().toString().trim();
 
-    // conferir se o formato da senha é valido
-    private boolean senhaValida(String senha) {
-        senha = senha.trim();
-        return senha.length() >= 6 && senha.length() < 14 && textPattern.matcher(senha).matches();
-    }
-
-    // conferir se o email é invalido
-    public static boolean emailInvalido(String email) {
-        boolean isEmailIdValid = false;
-        if (email != null && email.length() > 0) {
-            String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
-            Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
-            Matcher matcher = pattern.matcher(email);
-            if (matcher.matches()) {
-                isEmailIdValid = true;
-            }
+        if (usernameEditText.getEditableText().toString().equals("")) {
+            usernameEditText.setError("Informe seu e-mail.");
+        } else if (!validateEmail(usernameEditText.getEditableText().toString())) {
+            usernameEditText.setError("E-mail digitado incorretamente.");
+        } else if (passwordEditText.getEditableText().toString().equals("")) {
+            passwordEditText.setError("Informe sua senha.");
+        } else if (!validatePassword(passwordEditText.getEditableText().toString())) {
+            passwordEditText.setError("Senha deve ter entre 6 e 14 caracteres");
+        } else {
+            irParaHome();
         }
-        return isEmailIdValid;
     }
 
 
+    public boolean validateEmail(String email) {
+        matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
 
-    //***Confirmar o nome da tela de Home e concluir metodo
-    public void irParaHome(){
+    public boolean validatePassword(String password) {
+        return password.length() > 5;
+    }
 
-        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+    public void irParaHome() {
+
+        startActivity(new Intent(LoginActivity.this, HomeActivity.class));
 
     }
 
 
-
-    //***Confirmar o nome da tela de CadastroActivity e concluir metodo
-    public void irParaRegistro(){
+    public void irParaRegistro() {
         startActivity(new Intent(this, CadastroActivity.class));
     }
 
-
-
-    //***Confirmar o nome da tela de Esqueceu Senha e concluir metodo
-    public void esqueceuSenha(){
-        //Intent intent = new Intent(this,EsqueceuSenha.class);
-        //startActivity(intent);
+    public void initViews() {
+        usernameEditText = findViewById(R.id.textInputEditTextUsernameDigitado);
+        passwordEditText = findViewById(R.id.textInputEditTextPassswordDigitado);
+        registro = findViewById(R.id.textViewRegistro);
+        esqueceuSenha = findViewById(R.id.textViewEsqueceuSenha);
+        logIn = findViewById(R.id.botaoLogin);
+        loginFace = findViewById(R.id.botaoLoginFace);
+        loginGoogle = findViewById(R.id.botaoLoginGoogle);
     }
-
-
 }
-//*Verificar barra titulo "LoginActivity to your app".
