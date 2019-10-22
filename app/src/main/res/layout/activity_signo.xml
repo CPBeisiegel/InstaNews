@@ -15,37 +15,38 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
+
+            <ImageView
+
+                android:id="@+id/imagetitulo"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:scaleType="centerCrop"
+
+                app:srcCompat="@drawable/perfil" />
+
+            <TextView
+                android:id="@+id/TituloNoticia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:text="Lua crescente em Libra: energias começam a mudar."
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/nomeSigno"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textSize="50sp"
-                android:text="@string/SignoTitulo" />
+                android:text="@string/SignoTitulo"
+                android:textSize="50sp" />
 
-            <TextView
-                android:id="@+id/TituloNoticia"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:text="Lua crescente em Libra: energias começam a mudar."
-                android:textSize="20sp"/>
-
-            <ImageView
-
-                android:id="@+id/imagetitulo"
-                android:layout_width="match_parent"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_height="250dp"
-                android:scaleType="centerCrop"
-
-                app:srcCompat="@drawable/fotosigno" />
             <TextView
                 android:id="@+id/fonteNoticia1"
                 android:layout_width="wrap_content"
@@ -66,19 +67,5 @@
         </LinearLayout>
 
     </ScrollView>
-
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <com.google.android.material.bottomappbar.BottomAppBar
-            android:id="@+id/bottomAppBar"
-            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_gravity="bottom"
-            app:layout_constraintBottom_toBottomOf="parent" />
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

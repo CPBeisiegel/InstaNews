@@ -47,7 +47,7 @@ public class SignoFragment extends Fragment implements RecyclerSignoOnClick{
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_signo, container, false);
 
-        recyclerView = view.findViewById(R.id.fragment_signo);
+        recyclerView = view.findViewById(R.id.recyclerview_signo);
         RecyclerSignoOnClick signoListener = new RecyclerSignoOnClick() {
             @Override
             public void onClick(Signo signo) {
