@@ -68,11 +68,6 @@ public class SignoFragment extends Fragment implements RecyclerSignoOnClick{
         listaSignos.add(new Signo(R.drawable.leo, "Leão"));
         listaSignos.add(new Signo(R.drawable.virgem, "Virgem"));
         listaSignos.add(new Signo(R.drawable.libra, "Libra"));
-        listaSignos.add(new Signo(R.drawable.libra, "Libra"));
-        listaSignos.add(new Signo(R.drawable.libra, "Libra"));
-        listaSignos.add(new Signo(R.drawable.libra, "Libra"));
-        listaSignos.add(new Signo(R.drawable.libra, "Libra"));
-        listaSignos.add(new Signo(R.drawable.libra, "Libra"));
 
         return  listaSignos;
     }

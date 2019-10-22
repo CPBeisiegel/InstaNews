@@ -61,6 +61,7 @@ public class HomeActivity extends AppCompatActivity {
 
         switch (id) {
             case R.id.nav_add:
+                //TODO: alterar a intenção para a pagina correta, nova tela que está sendo criada. a tela de interesse.activity
                 replaceFragment(R.id.container1, new AddFragment());
                 return true;
             case R.id.nav_fav:
@@ -71,6 +72,9 @@ public class HomeActivity extends AppCompatActivity {
                 return true;
             case R.id.nav_perfil:
                 replaceFragment(R.id.container1, new PerfilFragment());
+                return true;
+            case  R.id.nav_home:
+                replaceFragment(R.id.container1,new AddFragment());
                 return true;
         }
 
