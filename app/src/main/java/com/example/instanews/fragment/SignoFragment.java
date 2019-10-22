@@ -48,15 +48,6 @@ public class SignoFragment extends Fragment implements RecyclerSignoOnClick{
         View view = inflater.inflate(R.layout.fragment_signo, container, false);
 
         recyclerView = view.findViewById(R.id.recyclerview_signo);
-        RecyclerSignoOnClick signoListener = new RecyclerSignoOnClick() {
-            @Override
-            public void onClick(Signo signo) {
-                Intent intent = new Intent(getActivity(), SignoActivity.class);
-                startActivity(intent);
-
-            }
-
-        };
 
 
         SignoAdapter adapter = new SignoAdapter(retornaSigno(), this);
@@ -76,6 +67,11 @@ public class SignoFragment extends Fragment implements RecyclerSignoOnClick{
         listaSignos.add(new Signo(R.drawable.cancer, "Câncer"));
         listaSignos.add(new Signo(R.drawable.leo, "Leão"));
         listaSignos.add(new Signo(R.drawable.virgem, "Virgem"));
+        listaSignos.add(new Signo(R.drawable.libra, "Libra"));
+        listaSignos.add(new Signo(R.drawable.libra, "Libra"));
+        listaSignos.add(new Signo(R.drawable.libra, "Libra"));
+        listaSignos.add(new Signo(R.drawable.libra, "Libra"));
+        listaSignos.add(new Signo(R.drawable.libra, "Libra"));
         listaSignos.add(new Signo(R.drawable.libra, "Libra"));
 
         return  listaSignos;
