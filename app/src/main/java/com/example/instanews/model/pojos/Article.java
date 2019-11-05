@@ -13,7 +13,7 @@ public class Article {
 
 
     @PrimaryKey(autoGenerate = true)
-    private long id;
+    private long idArticle;
 
     @Expose
     @SerializedName("author")
@@ -32,6 +32,7 @@ public class Article {
     @SerializedName("publishAt")
     @ColumnInfo(name = "dataPublicação")
     private String publishedAt;
+
 
     @Expose
     @SerializedName("source")
@@ -53,6 +54,15 @@ public class Article {
     @ColumnInfo(name = "urlDaImagem")
     private String urlToImage;
 
+
+
+    public long getIdArticle() {
+        return idArticle;
+    }
+
+    public void setIdArticle(long idArticle) {
+        this.idArticle = idArticle;
+    }
 
     public String getAuthor() {
         return author;
