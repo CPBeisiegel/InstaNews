@@ -1,4 +1,4 @@
-package com.example.instanews.fragment;
+package com.example.instanews.views.fragment;
 
 
 import android.os.Bundle;
@@ -11,13 +11,14 @@ import android.view.ViewGroup;
 
 import com.example.instanews.R;
 
+
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FavoFragment extends Fragment {
+public class SearchFragment extends Fragment {
 
 
-    public FavoFragment() {
+    public SearchFragment() {
         // Required empty public constructor
     }
 
@@ -26,8 +27,7 @@ public class FavoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_favo, container, false);
-
-    return view;
+        return inflater.inflate(R.layout.fragment_search, container, false);
     }
+
 }

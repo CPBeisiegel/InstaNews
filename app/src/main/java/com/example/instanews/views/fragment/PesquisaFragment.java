@@ -1,4 +1,4 @@
-package com.example.instanews.fragment;
+package com.example.instanews.views.fragment;
 
 
 import android.os.Bundle;

@@ -1,6 +1,5 @@
 package com.example.instanews.views.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -10,18 +9,13 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.instanews.Interface.RecyclerSignoOnClick;
 import com.example.instanews.R;
-import com.example.instanews.fragment.AddFragment;
-import com.example.instanews.fragment.FavoFragment;
-import com.example.instanews.fragment.PerfilFragment;
-import com.example.instanews.fragment.PesquisaFragment;
-import com.example.instanews.fragment.SignoFragment;
-import com.example.instanews.model.Signo;
+import com.example.instanews.views.fragment.AddFragment;
+import com.example.instanews.views.fragment.FavoFragment;
+import com.example.instanews.views.fragment.PerfilFragment;
+import com.example.instanews.views.fragment.PesquisaFragment;
+import com.example.instanews.views.fragment.SignoFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
 

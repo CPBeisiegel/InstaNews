@@ -7,9 +7,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.instanews.R;
-import com.example.instanews.model.Signo;
+import com.example.instanews.model.pojos.Signo;
 
-import static com.example.instanews.fragment.SignoFragment.SIGNO_KEY;
+import static com.example.instanews.views.fragment.SignoFragment.SIGNO_KEY;
 
 public class SignoActivity extends AppCompatActivity {
 

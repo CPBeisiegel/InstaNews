@@ -1,4 +1,4 @@
-package com.example.instanews.Interface;
+package com.example.instanews.views.Interface;
 
 public interface Comunicator {
 

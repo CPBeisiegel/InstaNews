@@ -1,4 +1,4 @@
-package com.example.instanews.fragment;
+package com.example.instanews.views.fragment;
 
 
 import android.content.Intent;
@@ -12,15 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.instanews.Interface.RecyclerSignoOnClick;
-import com.example.instanews.Interface.RecyclerViewOnClick;
+import com.example.instanews.views.Interface.RecyclerSignoOnClick;
 import com.example.instanews.R;
-import com.example.instanews.adapter.HomeAdapter;
-import com.example.instanews.adapter.SignoAdapter;
-import com.example.instanews.model.Noticias;
-import com.example.instanews.model.Signo;
-import com.example.instanews.views.activity.HomeActivity;
-import com.example.instanews.views.activity.NoticiaActivity;
+import com.example.instanews.views.adapter.SignoAdapter;
+import com.example.instanews.model.pojos.Signo;
 import com.example.instanews.views.activity.SignoActivity;
 
 import java.util.ArrayList;

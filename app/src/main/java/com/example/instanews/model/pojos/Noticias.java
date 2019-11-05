@@ -1,4 +1,4 @@
-package com.example.instanews.model;
+package com.example.instanews.model.pojos;
 
 public class Noticias {
     public int imagemnoticia;

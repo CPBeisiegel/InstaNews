@@ -1,4 +1,4 @@
-package com.example.instanews.adapter;
+package com.example.instanews.views.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,9 +8,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.instanews.Interface.RecyclerViewOnClick;
+import com.example.instanews.views.Interface.RecyclerViewOnClick;
 import com.example.instanews.R;
-import com.example.instanews.model.Noticias;
+import com.example.instanews.model.pojos.Noticias;
 
 import java.util.List;
 

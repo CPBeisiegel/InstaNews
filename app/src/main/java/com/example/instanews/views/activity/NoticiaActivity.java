@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.instanews.Interface.RecyclerSignoOnClick;
+import com.example.instanews.views.Interface.RecyclerSignoOnClick;
 import com.example.instanews.R;
 
 public class NoticiaActivity extends AppCompatActivity {
