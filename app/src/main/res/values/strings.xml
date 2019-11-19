@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">InstaNews</string>
+    <string name="login_to_your_app">Faça seu login no App</string>
+    <string name="login_username_or_email">Digite seu nome ou email</string>
+    <string name="login_password">Senha</string>
+    <string name="botao_logIn">LOGAR</string>
+    <string name="login_with_facebook">LOGIN WITH FACEBOOK</string>
+    <string name="login_with_twitter">LOGIN WITH TWITTER</string>
+    <string name="login_with_google">LOGIN WITH GOOGLE</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="Favoritos">FAVORITOS</string>
+    <string name="addnav">Adicionar</string>
+    <string name="pesquisanav">Pesquisa</string>
+    <string name="homenav">Home</string>
+    <string name="favoritosnav">Favoritos</string>
+    <string name="perfilnav">Perfil</string>
+    <string name="descricao">Descrição</string>
+    <string name="tituloviagem">Título viagem</string>
+    <string name="pesquisa">Pesquisa</string>
+    <string name="corpoTexto1">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</string>
+    <string name="fonteNoticia">FOLHA DE SÃO PAULO - 21/09/2019</string>
+    <string name="TituloNoticia1">Procuradores discutem boicote de cargos em futura gestão da PGR</string>
+    <string name="SignoTitulo">Signo</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="explorar_assuntos">Explorar Assuntos</string>
+</resources>

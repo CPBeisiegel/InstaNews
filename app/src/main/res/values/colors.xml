@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF5722</color>
+    <color name="colorPrimaryDark">#DCE64A19</color>
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorAccent">#FF5722</color>
+    <color name="colorPrimaryText">#212121</color>
+    <color name="colorSecondaryText">#757575</color>
+    <color name="colorGrey">#e0e0e0</color>
+    <color name="colorDivider">#DAD8D8</color>
+    <color name="colorLightPrimary">#FFCCBC</color>
+    <color name="colorTextIcons">#FFFFFF</color>
+    <color name="colorLoginFace">#2861AE</color>
+    <color name="colorLoginGmail">#D22A2D</color>
+    <color name="colorbar">#FFFFFF</color>
+
+
+
+</resources>
