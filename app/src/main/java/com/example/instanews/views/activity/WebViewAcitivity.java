@@ -9,7 +9,7 @@ import com.example.instanews.R;
 import com.example.instanews.model.pojos.Article;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import static com.example.instanews.views.fragment.AddFragment.ARTICLE_KEY;
+import static com.example.instanews.views.fragment.PrincipaisNoticFragment.ARTICLE_KEY;
 
 public class WebViewAcitivity extends AppCompatActivity {
 

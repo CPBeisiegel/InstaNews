@@ -24,7 +24,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.instanews.views.fragment.AddFragment.ARTICLE_KEY;
+import static com.example.instanews.views.fragment.PrincipaisNoticFragment.ARTICLE_KEY;
 import static com.example.instanews.views.fragment.SignoFragment.SIGNO_KEY;
 
 public class SignoActivity extends AppCompatActivity implements RecyclerViewOnClick {
@@ -51,7 +51,7 @@ public class SignoActivity extends AppCompatActivity implements RecyclerViewOnCl
             nomeSigno.setText(signo.getNomeSigno());
             Drawable drawable = getResources().getDrawable(signo.imagemSigno);
             fotoNoticia.setImageDrawable(drawable);
-            searchViewModel.getSearch(signo.nomeSigno, "e20a658afa904c22850939f8f038a03c");
+            searchViewModel.getSearch(signo.nomeSigno + " horoscope", "e20a658afa904c22850939f8f038a03c");
         }
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);

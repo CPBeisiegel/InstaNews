@@ -17,7 +17,7 @@ import java.util.List;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
 
-public class AddFragmentViewModel extends AndroidViewModel {
+public class PrincipaisNoticiasViewModel extends AndroidViewModel {
 
     private MutableLiveData<List<Article>> listArticle = new MutableLiveData<>();
     private CompositeDisposable disposable = new CompositeDisposable();
@@ -25,7 +25,7 @@ public class AddFragmentViewModel extends AndroidViewModel {
     private MutableLiveData<Boolean> loading = new MutableLiveData<>();
 
 
-    public AddFragmentViewModel(@NonNull Application application) {
+    public PrincipaisNoticiasViewModel(@NonNull Application application) {
         super(application);
     }
 

@@ -25,7 +25,7 @@ import com.example.instanews.views.adapter.ArticleAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.instanews.views.fragment.AddFragment.ARTICLE_KEY;
+import static com.example.instanews.views.fragment.PrincipaisNoticFragment.ARTICLE_KEY;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -50,7 +50,7 @@ public class SearchFragment extends Fragment implements RecyclerViewOnClick {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_search, container, false);
+         View view = inflater.inflate(R.layout.fragment_search, container, false);
         initView(view);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));

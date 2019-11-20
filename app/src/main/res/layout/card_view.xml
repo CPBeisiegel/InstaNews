@@ -18,8 +18,9 @@
 
             <ImageView
                 android:id="@+id/fundoCardSigno"
-                android:layout_width="71dp"
-                android:layout_height="51dp"
+                android:layout_width="74dp"
+                android:layout_height="49dp"
+                android:paddingTop="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -28,12 +29,13 @@
 
             <ImageView
                 android:id="@+id/iconeSigno"
-                android:layout_width="50dp"
-                android:layout_height="40dp"
+                android:layout_width="41dp"
+                android:layout_height="30dp"
                 app:layout_constraintBottom_toTopOf="@+id/signoCardNome"
                 app:layout_constraintEnd_toEndOf="@+id/fundoCardSigno"
                 app:layout_constraintStart_toStartOf="@+id/fundoCardSigno"
                 app:layout_constraintTop_toTopOf="@+id/fundoCardSigno"
+                app:layout_constraintVertical_bias="0.761"
                 app:srcCompat="@drawable/aries" />
 
             <TextView

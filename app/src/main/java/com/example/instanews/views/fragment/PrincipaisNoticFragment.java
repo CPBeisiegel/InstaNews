@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.instanews.model.pojos.Article;
-import com.example.instanews.viewmodel.AddFragmentViewModel;
+import com.example.instanews.viewmodel.PrincipaisNoticiasViewModel;
 import com.example.instanews.views.Interface.RecyclerViewOnClick;
 import com.example.instanews.R;
 import com.example.instanews.views.activity.NoticiaActivity;
@@ -28,16 +28,16 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 
-public class AddFragment extends Fragment implements RecyclerViewOnClick {
+public class PrincipaisNoticFragment extends Fragment implements RecyclerViewOnClick {
     public static final String ARTICLE_KEY = "article";
     private RecyclerView recyclerView;
     private ArticleAdapter adapter;
-    private AddFragmentViewModel addFragmentViewModel;
+    private PrincipaisNoticiasViewModel addFragmentViewModel;
     private List<Article> articles = new ArrayList<>();
     private ProgressBar progressBar;
 
 
-    public AddFragment() {
+    public PrincipaisNoticFragment() {
         // Required empty public constructor
     }
 
@@ -45,7 +45,7 @@ public class AddFragment extends Fragment implements RecyclerViewOnClick {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_add, container, false);
+        View view = inflater.inflate(R.layout.fragment_noticia, container, false);
         initView(view);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -69,7 +69,7 @@ public class AddFragment extends Fragment implements RecyclerViewOnClick {
     public void initView(View view){
         recyclerView = view.findViewById(R.id.recycler_article);
         adapter = new ArticleAdapter(articles, this);
-        addFragmentViewModel = ViewModelProviders.of(this).get(AddFragmentViewModel.class);
+        addFragmentViewModel = ViewModelProviders.of(this).get(PrincipaisNoticiasViewModel.class);
         progressBar = view.findViewById(R.id.progress_signo);
     }
 

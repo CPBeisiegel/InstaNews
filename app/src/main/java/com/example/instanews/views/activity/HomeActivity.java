@@ -10,7 +10,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.instanews.R;
-import com.example.instanews.views.fragment.AddFragment;
+import com.example.instanews.views.fragment.PrincipaisNoticFragment;
 import com.example.instanews.views.fragment.FavoFragment;
 import com.example.instanews.views.fragment.PerfilFragment;
 import com.example.instanews.views.fragment.SearchFragment;
@@ -64,7 +64,7 @@ public class HomeActivity extends AppCompatActivity {
                 replaceFragment(R.id.container1, new PerfilFragment());
                 return true;
             case  R.id.nav_home:
-                replaceFragment(R.id.container1,new AddFragment());
+                replaceFragment(R.id.container1,new PrincipaisNoticFragment());
                 return true;
         }
 

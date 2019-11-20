@@ -56,13 +56,19 @@ public class SignoFragment extends Fragment implements RecyclerSignoOnClick{
 
     public List<Signo> retornaSigno(){
         List<Signo> listaSignos = new ArrayList<>();
-        listaSignos.add(new Signo(R.drawable.aries, "Áries"));
-        listaSignos.add(new Signo(R.drawable.touro, "Touro"));
-        listaSignos.add(new Signo(R.drawable.gemeos, "Gêmeos"));
-        listaSignos.add(new Signo(R.drawable.cancer, "Câncer"));
-        listaSignos.add(new Signo(R.drawable.leo, "Leão"));
-        listaSignos.add(new Signo(R.drawable.virgem, "Virgem"));
+        listaSignos.add(new Signo(R.drawable.aries, "Aries"));
+        listaSignos.add(new Signo(R.drawable.touro, "Taurus"));
+        listaSignos.add(new Signo(R.drawable.gemeos, "Gemini"));
+        listaSignos.add(new Signo(R.drawable.cancer, "Cancer"));
+        listaSignos.add(new Signo(R.drawable.leo, "Leo"));
+        listaSignos.add(new Signo(R.drawable.virgem, "Virgo"));
         listaSignos.add(new Signo(R.drawable.libra, "Libra"));
+        listaSignos.add(new Signo(R.drawable.escorpiao,"Scorpio"));
+        listaSignos.add(new Signo(R.drawable.sagitario,"Sagittarius"));
+        listaSignos.add(new Signo(R.drawable.capricornio,"Capricorn"));
+        listaSignos.add(new Signo(R.drawable.aquario,"Aquarius"));
+        listaSignos.add(new Signo(R.drawable.peixes,"Pisces"));
+
 
         return  listaSignos;
     }

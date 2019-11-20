@@ -1,6 +1,6 @@
 package com.example.instanews.model.remote;
 
-import com.facebook.stetho.BuildConfig;
+import com.example.instanews.BuildConfig;
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 
 import java.util.concurrent.TimeUnit;

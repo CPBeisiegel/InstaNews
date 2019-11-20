@@ -13,7 +13,7 @@ import com.example.instanews.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.squareup.picasso.Picasso;
 
-import static com.example.instanews.views.fragment.AddFragment.ARTICLE_KEY;
+import static com.example.instanews.views.fragment.PrincipaisNoticFragment.ARTICLE_KEY;
 
 public class NoticiaActivity extends AppCompatActivity {
 
