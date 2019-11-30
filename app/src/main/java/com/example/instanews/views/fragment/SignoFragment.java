@@ -1,4 +1,4 @@
-package com.example.instanews.fragment;
+package com.example.instanews.views.fragment;
 
 
 import android.content.Intent;
@@ -12,15 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.instanews.Interface.RecyclerSignoOnClick;
-import com.example.instanews.Interface.RecyclerViewOnClick;
+import com.example.instanews.model.pojos.Signo;
+import com.example.instanews.views.Interface.RecyclerSignoOnClick;
 import com.example.instanews.R;
-import com.example.instanews.adapter.HomeAdapter;
-import com.example.instanews.adapter.SignoAdapter;
-import com.example.instanews.model.Noticias;
-import com.example.instanews.model.Signo;
-import com.example.instanews.views.activity.HomeActivity;
-import com.example.instanews.views.activity.NoticiaActivity;
+import com.example.instanews.views.adapter.SignoAdapter;
 import com.example.instanews.views.activity.SignoActivity;
 
 import java.util.ArrayList;
@@ -47,16 +42,7 @@ public class SignoFragment extends Fragment implements RecyclerSignoOnClick{
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_signo, container, false);
 
-        recyclerView = view.findViewById(R.id.fragment_signo);
-        RecyclerSignoOnClick signoListener = new RecyclerSignoOnClick() {
-            @Override
-            public void onClick(Signo signo) {
-                Intent intent = new Intent(getActivity(), SignoActivity.class);
-                startActivity(intent);
-
-            }
-
-        };
+        recyclerView = view.findViewById(R.id.recyclerview_signo);
 
 
         SignoAdapter adapter = new SignoAdapter(retornaSigno(), this);
@@ -70,13 +56,19 @@ public class SignoFragment extends Fragment implements RecyclerSignoOnClick{
 
     public List<Signo> retornaSigno(){
         List<Signo> listaSignos = new ArrayList<>();
-        listaSignos.add(new Signo(R.drawable.aries, "Áries"));
-        listaSignos.add(new Signo(R.drawable.touro, "Touro"));
-        listaSignos.add(new Signo(R.drawable.gemeos, "Gêmeos"));
-        listaSignos.add(new Signo(R.drawable.cancer, "Câncer"));
-        listaSignos.add(new Signo(R.drawable.leo, "Leão"));
-        listaSignos.add(new Signo(R.drawable.virgem, "Virgem"));
+        listaSignos.add(new Signo(R.drawable.aries, "Aries"));
+        listaSignos.add(new Signo(R.drawable.touro, "Taurus"));
+        listaSignos.add(new Signo(R.drawable.gemeos, "Gemini"));
+        listaSignos.add(new Signo(R.drawable.cancer, "Cancer"));
+        listaSignos.add(new Signo(R.drawable.leo, "Leo"));
+        listaSignos.add(new Signo(R.drawable.virgem, "Virgo"));
         listaSignos.add(new Signo(R.drawable.libra, "Libra"));
+        listaSignos.add(new Signo(R.drawable.escorpiao,"Scorpio"));
+        listaSignos.add(new Signo(R.drawable.sagitario,"Sagittarius"));
+        listaSignos.add(new Signo(R.drawable.capricornio,"Capricorn"));
+        listaSignos.add(new Signo(R.drawable.aquario,"Aquarius"));
+        listaSignos.add(new Signo(R.drawable.peixes,"Pisces"));
+
 
         return  listaSignos;
     }

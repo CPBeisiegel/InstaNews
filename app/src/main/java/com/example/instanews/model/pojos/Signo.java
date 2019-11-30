@@ -1,15 +1,9 @@
-package com.example.instanews.model;
+package com.example.instanews.model.pojos;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.example.instanews.R;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class Signo implements Parcelable {
-
     public int imagemSigno;
     public String nomeSigno;
 

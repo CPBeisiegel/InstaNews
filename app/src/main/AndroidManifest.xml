@@ -3,26 +3,29 @@
     package="com.example.instanews">
 
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".views.activity.CadastroActivity"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".views.activity.WebViewAcitivity"></activity>
+        <activity android:name=".views.activity.CadastroActivity" />
         <activity android:name=".views.activity.RecyclerViewActivity" />
-        <activity android:name=".views.activity.HomeActivity"/>
+        <activity android:name=".views.activity.HomeActivity" />
         <activity android:name=".views.activity.SignoActivity" />
         <activity android:name=".views.activity.NoticiaActivity" />
         <activity android:name=".views.activity.LoginActivity" />
         <activity android:name=".views.activity.SplashActivity">
-          
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 
