@@ -2,13 +2,19 @@ package com.example.instanews.views.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.instanews.R;
+import com.example.instanews.util.AppUtil;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -25,23 +31,21 @@ public class CadastroActivity extends AppCompatActivity {
     private Button btnRegistrar;
     private Button btnCancelar;
     private String nome, email, senha, confirmarsenha;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
-
         initViews();
 
+        btnRegistrar.setOnClickListener(v -> {
+            String email = editTextEmail.getEditText().getText().toString();
+            String password = editTextSenha.getEditText().getText().toString();
 
-        btnRegistrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                editTextEmail.setError(null);
-                editTextSenha.setError(null);
-                editTextConfirmarSenha.setError(null);
-
-                validaCampos();
+            // Se email e senha são validos tentamos o registro no firebase
+            if (validar(email, password)){
+                registrarUsuario(email, password);
             }
         });
 
@@ -54,6 +58,26 @@ public class CadastroActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void registrarUsuario(String email, String password) {
+
+        // TODO: cadastro co firebase via email e senha
+        FirebaseAuth.getInstance()
+                .createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+
+                        AppUtil.salvarIdUsuario(CadastroActivity.this, FirebaseAuth.getInstance().getCurrentUser().getUid());
+                        startActivity(new Intent(CadastroActivity.this, HomeActivity.class));
+                        finish();
+
+                    } else {
+                        Snackbar.make(btnRegistrar, task.getException().getMessage(), Snackbar.LENGTH_LONG).show();
+                        Log.i("TAG", "ERROR: " + task.getException().getMessage());
+
+                    }
+                });
     }
 
     public void irParaHome() {
@@ -76,30 +100,32 @@ public class CadastroActivity extends AppCompatActivity {
 
     }
 
-    public void validaCampos() {
-        email = editTextEmail.getEditText().getText().toString().trim();
-        nome = editTextNome.getEditText().getText().toString().trim();
-        senha = editTextSenha.getEditText().getText().toString().trim();
-        confirmarsenha = editTextConfirmarSenha.getEditText().getText().toString().trim();
-
-        editTextNome.setError(null);
-        editTextEmail.setError(null);
-        editTextSenha.setError(null);
-        editTextConfirmarSenha.setError(null);
-
-        if (editTextNome.getEditText().toString().equals("")) {
-            editTextNome.setError("Informe seu nome.");
-        } else if (editTextEmail.getEditText().toString().equals("")) {
-            editTextEmail.setError("Informe seu e-mail.");
-        } else if (!validateEmail(editTextEmail.getEditText().toString())) {
-            editTextEmail.setError("E-mail digitado incorretamente.");
-        } else if (editTextSenha.getEditText().toString().equals("")) {
-            editTextConfirmarSenha.setError("Informe sua senha.");
-        } else if (!validatePassword(editTextSenha.getEditText().toString())) {
-            editTextSenha.setError("Senha deve ter entre 6 e 14 caracteres");
-        } else {
-            irParaHome();
+    private boolean validar(String email, String password) {
+        if (email.isEmpty()) {
+            editTextEmail.setError("Email não pode ser vazio");
+            editTextEmail.requestFocus();
+            return false;
         }
+
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            editTextEmail.setError("Email inválido");
+            editTextEmail.requestFocus();
+            return false;
+        }
+
+        if (password.isEmpty()) {
+            editTextSenha.setError("Senha não pode ser vazio");
+            editTextSenha.requestFocus();
+            return false;
+        }
+
+        if (password.length() < 6) {
+            editTextSenha.setError("Senha deve ser maior qeu 6 caracters");
+            editTextSenha.requestFocus();
+            return false;
+        }
+
+        return true;
     }
 
     public boolean validateEmail(String email) {

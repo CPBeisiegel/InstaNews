@@ -18,7 +18,6 @@ import com.example.instanews.views.fragment.SignoFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
-
     BottomNavigationView navigationView;
 
     @Override

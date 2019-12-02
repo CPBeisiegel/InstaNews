@@ -6,11 +6,26 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.instanews.R;
+import com.example.instanews.util.AppUtil;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.FacebookAuthProvider;
+import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -28,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button loginFace;
     private Button loginGoogle;
     private String email, senha;
+    private CallbackManager callbackManager;
 
 
     @Override
@@ -37,15 +53,11 @@ public class LoginActivity extends AppCompatActivity {
 
         initViews();
 
-        logIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                usernameEditText.setError(null);
-                passwordEditText.setError(null);
+        callbackManager = CallbackManager.Factory.create();
 
-                validarCampos();
-            }
-        });
+        logIn.setOnClickListener(v -> loginEmail());
+
+        loginFace.setOnClickListener(v -> loginFacebook());
 
         registro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,27 +74,27 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    public void loginEmail() {
 
-    public void validarCampos() {
-        usernameEditText.setError(null);
-        passwordEditText.setError(null);
+        String email = usernameEditText.getText().toString();
+        String password = passwordEditText.getText().toString();
 
-        email = usernameEditText.getText().toString().trim();
-        senha = passwordEditText.getText().toString().trim();
-
-        if (usernameEditText.getEditableText().toString().equals("")) {
-            usernameEditText.setError("Informe seu e-mail.");
-        } else if (!validateEmail(usernameEditText.getEditableText().toString())) {
-            usernameEditText.setError("E-mail digitado incorretamente.");
-        } else if (passwordEditText.getEditableText().toString().equals("")) {
-            passwordEditText.setError("Informe sua senha.");
-        } else if (!validatePassword(passwordEditText.getEditableText().toString())) {
-            passwordEditText.setError("Senha deve ter entre 6 e 14 caracteres");
-        } else {
-            irParaHome();
+        if (email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Campos não podem ser vazios :(", Toast.LENGTH_SHORT).show();
+            return;
         }
-    }
 
+        // tentamos fazer o login com o email e senha no firebase
+        FirebaseAuth.getInstance()
+                .signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        irParaHome(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                    } else {
+                        Snackbar.make(logIn, task.getException().getMessage(), Snackbar.LENGTH_LONG).show();
+                    }
+                });
+    }
 
     public boolean validateEmail(String email) {
         matcher = pattern.matcher(email);
@@ -93,10 +105,48 @@ public class LoginActivity extends AppCompatActivity {
         return password.length() > 5;
     }
 
-    public void irParaHome() {
+    public void loginFacebook() {
+        // TODO: Login facebook
+        LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile"));
+        LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                //
+                AuthCredential credential = FacebookAuthProvider
+                        .getCredential(loginResult.getAccessToken().getToken());
 
-        startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                FirebaseAuth.getInstance().signInWithCredential(credential)
+                        .addOnCompleteListener(task -> {
+                            irParaHome(loginResult.getAccessToken().getUserId());
+                        });
+            }
 
+            @Override
+            public void onCancel() {
+                Toast.makeText(LoginActivity.this, "Cancelado", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+                Toast.makeText(LoginActivity.this, error.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // TODO: activeresult para callback facebook
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+
+        super.onActivityResult(requestCode, resultCode, data);
+
+    }
+
+    private void irParaHome(String uiid) {
+        AppUtil.salvarIdUsuario(getApplication().getApplicationContext(), uiid);
+        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+        finish();
     }
 
 

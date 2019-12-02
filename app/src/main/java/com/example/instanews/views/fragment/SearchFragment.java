@@ -39,6 +39,7 @@ public class SearchFragment extends Fragment implements RecyclerViewOnClick {
     private ProgressBar progressBar;
     private String inicialNoticia = "S";
     private SearchView searchView;
+    private String noticiasNome = "Noticias";
 
 
     public SearchFragment() {
@@ -69,18 +70,21 @@ public class SearchFragment extends Fragment implements RecyclerViewOnClick {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String s) {
-                adapter.clear();
+
                 searchViewModel.getSearch(s, "e20a658afa904c22850939f8f038a03c");
+                adapter.clear();
                 searchViewModel.getArticles();
+
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String s) {
-                if (s.length() > 1) {
+                if (s.length() > 3) {
                     adapter.clear();
                     searchViewModel.getSearch(s, "e20a658afa904c22850939f8f038a03c");
                     searchViewModel.getArticles();
+
                 }
                 return false;
             }

@@ -53,5 +53,6 @@ public class PrincipaisNoticiasViewModel extends AndroidViewModel {
     @Override
     protected void onCleared() {
         super.onCleared();
+        disposable.clear();
     }
 }
