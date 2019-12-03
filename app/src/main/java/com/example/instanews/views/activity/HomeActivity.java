@@ -15,10 +15,18 @@ import com.example.instanews.views.fragment.FavoFragment;
 import com.example.instanews.views.fragment.PerfilFragment;
 import com.example.instanews.views.fragment.SearchFragment;
 import com.example.instanews.views.fragment.SignoFragment;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.squareup.picasso.Picasso;
+
+import static com.example.instanews.views.activity.LoginActivity.GOOGLE_ACCOUNT;
 
 public class HomeActivity extends AppCompatActivity {
     BottomNavigationView navigationView;
+    private GoogleSignInClient googleSignInClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +48,18 @@ public class HomeActivity extends AppCompatActivity {
             }
 
         });
+
+
+        GoogleSignInOptions gso = new GoogleSignInOptions
+                .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+
+        //Atribuição paraa  o objeto o valor do login recebido
+        googleSignInClient = GoogleSignIn.getClient(this, gso);
+
+        //Chamada do método que pega os dados do usuario e atribui para as views
+        pegaOsDados();
     }
 
     private void replaceFragment(int container, Fragment fragment) {
@@ -69,6 +89,13 @@ public class HomeActivity extends AppCompatActivity {
 
         return false;
 
+    }
+
+    //Chamada do método que pega os dados do usuario e atribui para as views
+    private void pegaOsDados() {
+        GoogleSignInAccount googleSignInAccount = getIntent().getParcelableExtra(GOOGLE_ACCOUNT);
+       // Picasso.get().load(googleSignInAccount.getPhotoUrl()).centerInside().fit().into(imgProfile);
+        // nameProfile.setText(googleSignInAccount.getDisplayName());
     }
 
 }
