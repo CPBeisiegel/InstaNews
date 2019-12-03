@@ -52,6 +52,7 @@
                     android:id="@+id/buttonSair"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:backgroundTint="@color/colorAccent"
                     android:text="Logout"
                     android:textColor="@color/colorTextIcons"
@@ -61,18 +62,6 @@
 
                 </Button>
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/fragmentlist_perfil"
-                    android:layout_width="389dp"
-                    android:layout_height="344dp"
-                    android:layout_marginTop="16dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/buttonSair"
-                    app:layout_constraintVertical_bias="0.0"
-                    tools:itemCount="2"
-                    tools:listitem="@layout/list_noticias" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>

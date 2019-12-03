@@ -82,8 +82,8 @@ public class HomeActivity extends AppCompatActivity {
             case R.id.nav_perfil:
                 replaceFragment(R.id.container1, new PerfilFragment());
                 return true;
-            case  R.id.nav_home:
-                replaceFragment(R.id.container1,new PrincipaisNoticFragment());
+            case R.id.nav_home:
+                replaceFragment(R.id.container1, new PrincipaisNoticFragment());
                 return true;
         }
 
@@ -94,7 +94,7 @@ public class HomeActivity extends AppCompatActivity {
     //Chamada do método que pega os dados do usuario e atribui para as views
     private void pegaOsDados() {
         GoogleSignInAccount googleSignInAccount = getIntent().getParcelableExtra(GOOGLE_ACCOUNT);
-       // Picasso.get().load(googleSignInAccount.getPhotoUrl()).centerInside().fit().into(imgProfile);
+        // Picasso.get().load(googleSignInAccount.getPhotoUrl()).centerInside().fit().into(imgProfile);
         // nameProfile.setText(googleSignInAccount.getDisplayName());
     }
 
