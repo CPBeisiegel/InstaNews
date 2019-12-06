@@ -6,26 +6,38 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.Expose;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
 
+@Entity(tableName = "article")
 public class Article implements Parcelable {
+
+    @PrimaryKey(autoGenerate = true)
+    private long id;
     @Expose
+    @ColumnInfo(name = "author")
     private String author;
     @Expose
     private String content;
     @Expose
+    @ColumnInfo(name = "description")
     private String description;
     @Expose
     private String publishedAt;
     @Expose
     private Source source;
     @Expose
+    @ColumnInfo(name = "name")
     private String title;
     @Expose
     private String url;
+    @ColumnInfo(name = "imagem")
     @Expose
     private String urlToImage;
 
+    @Ignore
     protected Article(Parcel in) {
         author = in.readString();
         content = in.readString();
@@ -34,6 +46,30 @@ public class Article implements Parcelable {
         title = in.readString();
         url = in.readString();
         urlToImage = in.readString();
+    }
+
+    public Article() {
+    }
+
+    @Ignore
+    public Article(long id, String author, String content, String description, String publishedAt, Source source, String title, String url, String urlToImage) {
+        this.id = id;
+        this.author = author;
+        this.content = content;
+        this.description = description;
+        this.publishedAt = publishedAt;
+        this.source = source;
+        this.title = title;
+        this.url = url;
+        this.urlToImage = urlToImage;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public static final Creator<Article> CREATOR = new Creator<Article>() {

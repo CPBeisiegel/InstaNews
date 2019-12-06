@@ -26,6 +26,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHold
         this.listener = listener;
     }
 
+
     public ArticleAdapter(List<Article> listanoticias) {
         this.listanoticias = listanoticias;
     }
@@ -81,5 +82,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHold
             titulo.setText(noticias.getTitle());
             descricao.setText(noticias.getDescription());
         }
+
+
     }
 }

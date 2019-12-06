@@ -63,6 +63,7 @@ public class PrincipaisNoticFragment extends Fragment implements RecyclerViewOnC
                 progressBar.setVisibility(View.GONE);
             }
         });
+
         return view;
     }
 
@@ -70,8 +71,10 @@ public class PrincipaisNoticFragment extends Fragment implements RecyclerViewOnC
         recyclerView = view.findViewById(R.id.recycler_article);
         adapter = new ArticleAdapter(articles, this);
         addFragmentViewModel = ViewModelProviders.of(this).get(PrincipaisNoticiasViewModel.class);
+
         progressBar = view.findViewById(R.id.progress_signo);
     }
+
 
     @Override
     public void onClick(Article noticias) {
@@ -81,5 +84,6 @@ public class PrincipaisNoticFragment extends Fragment implements RecyclerViewOnC
         intent.putExtras(bundle);
         startActivity(intent);
     }
+
 }
 
