@@ -37,7 +37,6 @@ public class SearchFragment extends Fragment implements RecyclerViewOnClick {
     private SearchViewModel searchViewModel;
     private List<Article> articles = new ArrayList<>();
     private ProgressBar progressBar;
-    private String inicialNoticia = "S";
     private SearchView searchView;
 
 
@@ -56,8 +55,6 @@ public class SearchFragment extends Fragment implements RecyclerViewOnClick {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
 
-
-
         searchViewModel.getLoading().observe(this, (Boolean loading) -> {
             if (loading) {
                 progressBar.setVisibility(View.VISIBLE);
@@ -66,6 +63,7 @@ public class SearchFragment extends Fragment implements RecyclerViewOnClick {
             }
         });
 
+        String inicialNoticia = "S";
         searchViewModel.getSearch(inicialNoticia, "e20a658afa904c22850939f8f038a03c");
 
         searchViewModel.getSearchArticle().observe(this, articles1 -> adapter.atualizaLista(articles1));

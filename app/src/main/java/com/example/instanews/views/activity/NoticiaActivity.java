@@ -3,12 +3,14 @@ package com.example.instanews.views.activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.instanews.model.pojos.Article;
 import com.example.instanews.R;
@@ -54,6 +56,7 @@ public class NoticiaActivity extends AppCompatActivity {
 
             imageButton.setOnClickListener(view -> {
                 favoritosViewModel.inserirNoticia(article);
+                Toast.makeText(this,"Adicionado no Favorito",Toast.LENGTH_LONG).show();
 
             });
         }

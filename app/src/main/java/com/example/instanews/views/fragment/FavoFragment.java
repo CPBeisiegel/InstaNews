@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -43,7 +44,7 @@ public class FavoFragment extends Fragment implements RecyclerViewOnClick {
         FavoritosViewModel favoritosViewModel = ViewModelProviders.of(this).get(FavoritosViewModel.class);
 
         RecyclerView recyclerView = view.findViewById(R.id.recyclerviewFav);
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new ArticleAdapter(listaArtigos, this);
         recyclerView.setAdapter(adapter);
 
