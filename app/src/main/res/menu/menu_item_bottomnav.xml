@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/navigation_activity">
+    <group android:checkableBehavior="single">
+
+
+        <item
+            android:id="@+id/nav_home"
+            android:title="@string/homenav"
+            android:icon="@drawable/icon_home"/>
+
+        <item
+            android:id="@+id/nav_pesquisa"
+            android:title="@string/pesquisanav"
+            android:icon="@drawable/icon_pesquisa"/>
+
+        <item
+            android:id="@+id/nav_fav"
+            android:title="@string/favoritosnav"
+            android:icon="@drawable/icon_favoritos"/>
+        <item
+            android:id="@+id/nav_perfil"
+            android:title="@string/perfilnav"
+            android:icon="@drawable/icon_perfil"/>
+    </group>
+</menu>
