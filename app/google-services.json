@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "764268208785",
+    "firebase_url": "https://instanews-fed81.firebaseio.com",
+    "project_id": "instanews-fed81",
+    "storage_bucket": "instanews-fed81.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:764268208785:android:8808d52ebbd86ca5cb5530",
+        "android_client_info": {
+          "package_name": "com.example.instanews"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIPH9n6qdIEApSfuwhx2pWFiGlXp_Hk00"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

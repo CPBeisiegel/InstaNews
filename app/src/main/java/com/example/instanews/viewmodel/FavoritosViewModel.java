@@ -48,6 +48,7 @@ public class FavoritosViewModel extends AndroidViewModel {
         this.articleMutableLiveData.setValue(article);
     }
 
+
     public void mostrarFavoritos(){
         disposable.add(
                 favDao.getAllArticles()
