@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,8 +17,12 @@ import com.example.instanews.R;
 import com.example.instanews.views.activity.HomeActivity;
 import com.example.instanews.views.activity.LoginActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.squareup.picasso.Picasso;
+
+import static com.example.instanews.views.activity.LoginActivity.GOOGLE_ACCOUNT;
 
 
 /**
@@ -24,9 +30,11 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
  */
 public class PerfilFragment extends Fragment {
 
-    private RecyclerView recyclerView;
     private Button botaoSair;
     private GoogleSignInClient googleSignInClient;
+    private ImageView imgProfile;
+    private TextView emalProfile;
+    private TextView nomeProfile;
 
     public PerfilFragment() {
         // Required empty public constructor
@@ -37,11 +45,9 @@ public class PerfilFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
-
         View view = inflater.inflate(R.layout.fragment_perfil, container, false);
-
         initView(view);
+
 
         //Ação que traz os dados Default do usuário selecionado na hora do login
         GoogleSignInOptions gso = new GoogleSignInOptions
@@ -49,8 +55,19 @@ public class PerfilFragment extends Fragment {
                 .requestEmail()
                 .build();
 
-        //Atribuição paraa  o objeto o valor do login recebido
         googleSignInClient = GoogleSignIn.getClient(getContext(), gso);
+
+        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getActivity());
+        if (acct != null){
+            Picasso.get().load(acct.getPhotoUrl()).centerInside().fit().into(imgProfile);
+            nomeProfile.setText(acct.getDisplayName());
+            emalProfile.setText(acct.getEmail());
+
+        }
+        //GoogleSignInAccount googleSignInAccount = getIntent().getParcelableExtra(GOOGLE_ACCOUNT);
+        //Picasso.get().load(googleSignInAccount.getPhotoUrl()).centerInside().fit().into(imgProfile);
+        //emalProfile.setText(googleSignInAccount.getDisplayName());
+
 
         botaoSair.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +85,10 @@ public class PerfilFragment extends Fragment {
 
     public void initView(View view){
         botaoSair = view.findViewById(R.id.buttonSair);
+        imgProfile = view.findViewById(R.id.imageViewPerfil);
+        emalProfile = view.findViewById(R.id.emailPerfil);
+        nomeProfile = view.findViewById(R.id.nomePerfil);
+
     }
 
 
