@@ -5,19 +5,17 @@
     tools:showIn="@layout/navigation_activity">
     <group android:checkableBehavior="single">
 
+
         <item
-            android:id="@+id/nav_add"
-            android:title="@string/addnav"
-            android:icon="@drawable/icon_add"/>
+            android:id="@+id/nav_home"
+            android:title="@string/homenav"
+            android:icon="@drawable/icon_home"/>
 
         <item
             android:id="@+id/nav_pesquisa"
             android:title="@string/pesquisanav"
             android:icon="@drawable/icon_pesquisa"/>
-        <item
-            android:id="@+id/nav_home"
-            android:title="@string/homenav"
-            android:icon="@drawable/icon_home"/>
+
         <item
             android:id="@+id/nav_fav"
             android:title="@string/favoritosnav"

@@ -1,68 +1,88 @@
 
 package com.example.instanews.model.pojos;
 
-import androidx.room.ColumnInfo;
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
 
-@Entity(tableName = "artigos")
-public class Article {
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
 
+@Entity(tableName = "article")
+public class Article implements Parcelable {
 
     @PrimaryKey(autoGenerate = true)
-    private long idArticle;
-
+    private long id;
     @Expose
-    @SerializedName("author")
-    @ColumnInfo(name = "autor")
+    @ColumnInfo(name = "author")
     private String author;
-
-//    @Expose
-//    private Object content;
-
     @Expose
-    @SerializedName("description")
-    @ColumnInfo(name = "descrição")
+    private String content;
+    @Expose
+    @ColumnInfo(name = "description")
     private String description;
-
     @Expose
-    @SerializedName("publishAt")
-    @ColumnInfo(name = "dataPublicação")
     private String publishedAt;
-
-
     @Expose
-    @SerializedName("source")
-    @ColumnInfo(name = "source")
     private Source source;
-
     @Expose
-    @SerializedName("title")
-    @ColumnInfo(name = "titulo")
+    @ColumnInfo(name = "name")
     private String title;
-
     @Expose
-    @SerializedName("url")
-    @ColumnInfo(name = "urlDaNoticia")
     private String url;
-
+    @ColumnInfo(name = "imagem")
     @Expose
-    @SerializedName("urlToImage")
-    @ColumnInfo(name = "urlDaImagem")
     private String urlToImage;
 
-
-
-    public long getIdArticle() {
-        return idArticle;
+    @Ignore
+    protected Article(Parcel in) {
+        author = in.readString();
+        content = in.readString();
+        description = in.readString();
+        publishedAt = in.readString();
+        title = in.readString();
+        url = in.readString();
+        urlToImage = in.readString();
     }
 
-    public void setIdArticle(long idArticle) {
-        this.idArticle = idArticle;
+    public Article() {
     }
+
+    @Ignore
+    public Article(long id, String author, String content, String description, String publishedAt, Source source, String title, String url, String urlToImage) {
+        this.id = id;
+        this.author = author;
+        this.content = content;
+        this.description = description;
+        this.publishedAt = publishedAt;
+        this.source = source;
+        this.title = title;
+        this.url = url;
+        this.urlToImage = urlToImage;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public static final Creator<Article> CREATOR = new Creator<Article>() {
+        @Override
+        public Article createFromParcel(Parcel in) {
+            return new Article(in);
+        }
+
+        @Override
+        public Article[] newArray(int size) {
+            return new Article[size];
+        }
+    };
 
     public String getAuthor() {
         return author;
@@ -72,13 +92,13 @@ public class Article {
         this.author = author;
     }
 
-//    public Object getContent() {
-//        return content;
-//    }
-//
-//    public void setContent(Object content) {
-//        this.content = content;
-//    }
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
 
     public String getDescription() {
         return description;
@@ -128,4 +148,19 @@ public class Article {
         this.urlToImage = urlToImage;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(author);
+        parcel.writeString(content);
+        parcel.writeString(description);
+        parcel.writeString(publishedAt);
+        parcel.writeString(title);
+        parcel.writeString(url);
+        parcel.writeString(urlToImage);
+    }
 }

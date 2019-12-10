@@ -1,40 +1,22 @@
 
 package com.example.instanews.model.pojos;
 
-import androidx.room.ColumnInfo;
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
-
 import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
 
-@Entity(tableName = "sources")
+
 public class Source {
 
-
     @Expose
-    @SerializedName("id")
-    private String idSource;
-
-
+    private String id;
     @Expose
-    @SerializedName("name")
-    @ColumnInfo(name = "nomeFonte")
     private String name;
 
-
-
-    public Source(String idSource, String name) {
-        this.idSource = idSource;
-        this.name = name;
-    }
-
     public String getId() {
-        return idSource;
+        return id;
     }
 
     public void setId(String id) {
-        this.idSource = id;
+        this.id = id;
     }
 
     public String getName() {

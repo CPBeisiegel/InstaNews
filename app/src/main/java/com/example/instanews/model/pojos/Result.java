@@ -1,38 +1,18 @@
 
 package com.example.instanews.model.pojos;
 
-import androidx.room.ColumnInfo;
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
-
 import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
-@Entity(tableName = "news")
-public class News {
 
 
-    @PrimaryKey(autoGenerate = true)
-    private long id;
-
-
-    @ColumnInfo(name = "name")
-    private String name;
+public class Result {
 
     @Expose
-    @SerializedName("articles")
-    @ColumnInfo(name = "listaArtigos")
     private List<Article> articles;
-
     @Expose
-    @SerializedName("status")
-    @ColumnInfo(name = "status")
     private String status;
-
     @Expose
-    @SerializedName("totalResults")
-    @ColumnInfo(name = "resultadoTotal")
     private Long totalResults;
 
     public List<Article> getArticles() {

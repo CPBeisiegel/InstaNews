@@ -1,8 +1,8 @@
 package com.example.instanews.views.Interface;
 
-import com.example.instanews.model.pojos.Noticias;
+import com.example.instanews.model.pojos.Article;
 
 public interface RecyclerViewOnClick {
-    void onClick(Noticias noticias);
+    void onClick(Article noticias);
 
 }

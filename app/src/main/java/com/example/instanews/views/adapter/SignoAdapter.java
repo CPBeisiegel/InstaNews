@@ -10,9 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.instanews.model.pojos.Signo;
 import com.example.instanews.views.Interface.RecyclerSignoOnClick;
 import com.example.instanews.R;
-import com.example.instanews.model.pojos.Signo;
 
 import java.util.List;
 

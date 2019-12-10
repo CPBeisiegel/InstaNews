@@ -6,17 +6,26 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import com.example.instanews.views.Interface.RecyclerViewOnClick;
-import com.example.instanews.R;
-import com.example.instanews.views.adapter.HomeAdapter;
-import com.example.instanews.model.pojos.Noticias;
-import com.example.instanews.views.activity.NoticiaActivity;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.instanews.R;
+import com.example.instanews.views.activity.HomeActivity;
+import com.example.instanews.views.activity.LoginActivity;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.squareup.picasso.Picasso;
+
+import static com.example.instanews.views.activity.LoginActivity.GOOGLE_ACCOUNT;
+import static com.google.firebase.auth.FirebaseAuth.getInstance;
 
 
 /**
@@ -24,9 +33,12 @@ import java.util.List;
  */
 public class PerfilFragment extends Fragment {
 
-    private RecyclerView recyclerView;
-
-
+    private Button botaoSair;
+    private GoogleSignInClient googleSignInClient;
+    private ImageView imgProfile;
+    private TextView emalProfile;
+    private TextView nomeProfile;
+    private FirebaseUser firebaseAuth;
     public PerfilFragment() {
         // Required empty public constructor
     }
@@ -36,31 +48,33 @@ public class PerfilFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
         View view = inflater.inflate(R.layout.fragment_perfil, container, false);
+        initView(view);
 
-        recyclerView = view.findViewById(R.id.fragmentlist_perfil);
-        RecyclerViewOnClick listener = new RecyclerViewOnClick() {
+        firebaseAuth = getInstance().getCurrentUser();
+        Picasso.get().load(firebaseAuth.getPhotoUrl()).error(R.drawable.viagem).into(imgProfile);
+        emalProfile.setText(firebaseAuth.getEmail());
+        nomeProfile.setText(firebaseAuth.getDisplayName());
+
+        botaoSair.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(Noticias noticias) {
-                Intent intent = new Intent(getActivity(), NoticiaActivity.class);
-                startActivity(intent);
-
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
             }
-        };
-        List<Noticias> listanoticia = new ArrayList<>();
-        listanoticia.add(new Noticias(R.drawable.foto_noticia1, "Titulo Teste", "Descrição teste"));
-        listanoticia.add(new Noticias(R.drawable.foto_noticia1, "Titulo Teste", "Descrição teste"));
-        listanoticia.add(new Noticias(R.drawable.foto_noticia1, "Titulo Teste", "Descrição teste"));
-        listanoticia.add(new Noticias(R.drawable.foto_noticia1, "Titulo Teste", "Descrição teste"));
-        listanoticia.add(new Noticias(R.drawable.foto_noticia1, "Titulo Teste", "Descrição teste"));
-        listanoticia.add(new Noticias(R.drawable.foto_noticia1, "Titulo Teste", "Descrição teste"));
-        listanoticia.add(new Noticias(R.drawable.foto_noticia1, "Titulo Teste", "Descrição teste"));
-
-        HomeAdapter adapter = new HomeAdapter(listanoticia, listener);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
+        });
         return view;
     }
+
+
+
+
+    public void initView(View view){
+        botaoSair = view.findViewById(R.id.buttonSair);
+        imgProfile = view.findViewById(R.id.imageViewPerfil);
+        emalProfile = view.findViewById(R.id.emailPerfil);
+        nomeProfile = view.findViewById(R.id.nomePerfil);
+
+    }
+
+
 }

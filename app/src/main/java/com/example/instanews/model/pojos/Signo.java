@@ -4,7 +4,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Signo implements Parcelable {
-
     public int imagemSigno;
     public String nomeSigno;
 
