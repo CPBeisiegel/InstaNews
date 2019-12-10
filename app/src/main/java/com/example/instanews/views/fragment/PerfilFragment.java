@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.instanews.R;
 import com.example.instanews.views.activity.HomeActivity;
 import com.example.instanews.views.activity.LoginActivity;
+import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -34,11 +35,11 @@ import static com.google.firebase.auth.FirebaseAuth.getInstance;
 public class PerfilFragment extends Fragment {
 
     private Button botaoSair;
-    private GoogleSignInClient googleSignInClient;
     private ImageView imgProfile;
     private TextView emalProfile;
     private TextView nomeProfile;
-    private FirebaseUser firebaseAuth;
+
+
     public PerfilFragment() {
         // Required empty public constructor
     }
@@ -51,16 +52,19 @@ public class PerfilFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_perfil, container, false);
         initView(view);
 
-        firebaseAuth = getInstance().getCurrentUser();
-        Picasso.get().load(firebaseAuth.getPhotoUrl()).error(R.drawable.viagem).into(imgProfile);
-        emalProfile.setText(firebaseAuth.getEmail());
-        nomeProfile.setText(firebaseAuth.getDisplayName());
+        FirebaseUser firebaseAuth = getInstance().getCurrentUser();
+        if (firebaseAuth != null) {
+            Picasso.get().load(firebaseAuth.getPhotoUrl()).error(R.drawable.viagem).into(imgProfile);
+            emalProfile.setText(firebaseAuth.getEmail());
+            nomeProfile.setText(firebaseAuth.getDisplayName());
+        }
 
-        botaoSair.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-            }
+
+        botaoSair.setOnClickListener(view1 -> {
+            //saindo
+            Intent intent =  new Intent(getContext(), LoginActivity.class);
+            FirebaseAuth.getInstance().signOut();
+            startActivity(intent);
         });
         return view;
     }
@@ -75,6 +79,7 @@ public class PerfilFragment extends Fragment {
         nomeProfile = view.findViewById(R.id.nomePerfil);
 
     }
+
 
 
 }
