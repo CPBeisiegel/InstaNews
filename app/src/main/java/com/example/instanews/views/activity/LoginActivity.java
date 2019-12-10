@@ -149,7 +149,7 @@ public class LoginActivity extends AppCompatActivity {
                     try {
                         Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
                         GoogleSignInAccount conta = task.getResult(ApiException.class);
-                        concluirLogin(conta);
+                        concluirLoginGoogle(conta);
                     } catch (ApiException e) {
                         Log.i("LOG", "Error: " + e.getMessage());
                         Toast.makeText(getApplicationContext(), "Erro", Toast.LENGTH_SHORT).show();
@@ -159,7 +159,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
     //Método que conclui o Login e envia o objeto com os dados do usuario logado para a tela MainActivity
-    private void concluirLogin(GoogleSignInAccount googleSignInAccount) {
+    private void concluirLoginGoogle(GoogleSignInAccount googleSignInAccount) {
         Intent intent = new Intent(this, HomeActivity.class);
         intent.putExtra(GOOGLE_ACCOUNT, googleSignInAccount);
         startActivity(intent);
@@ -173,7 +173,7 @@ public class LoginActivity extends AppCompatActivity {
         GoogleSignInAccount alreadyloggedAccount = GoogleSignIn.getLastSignedInAccount(this);
         if (alreadyloggedAccount != null) {
             Toast.makeText(this, "Você já está logado", Toast.LENGTH_SHORT).show();
-            concluirLogin(alreadyloggedAccount);
+            concluirLoginGoogle(alreadyloggedAccount);
         } else {
             Toast.makeText(this, "Entre em alguma conta", Toast.LENGTH_LONG).show();
         }

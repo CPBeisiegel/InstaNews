@@ -20,9 +20,12 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.squareup.picasso.Picasso;
 
 import static com.example.instanews.views.activity.LoginActivity.GOOGLE_ACCOUNT;
+import static com.google.firebase.auth.FirebaseAuth.getInstance;
 
 
 /**
@@ -35,7 +38,7 @@ public class PerfilFragment extends Fragment {
     private ImageView imgProfile;
     private TextView emalProfile;
     private TextView nomeProfile;
-
+    private FirebaseUser firebaseAuth;
     public PerfilFragment() {
         // Required empty public constructor
     }
@@ -48,39 +51,21 @@ public class PerfilFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_perfil, container, false);
         initView(view);
 
-
-        //Ação que traz os dados Default do usuário selecionado na hora do login
-        GoogleSignInOptions gso = new GoogleSignInOptions
-                .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .build();
-
-        googleSignInClient = GoogleSignIn.getClient(getContext(), gso);
-
-        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getActivity());
-        if (acct != null){
-            Picasso.get().load(acct.getPhotoUrl()).centerInside().fit().into(imgProfile);
-            nomeProfile.setText(acct.getDisplayName());
-            emalProfile.setText(acct.getEmail());
-
-        }
-        //GoogleSignInAccount googleSignInAccount = getIntent().getParcelableExtra(GOOGLE_ACCOUNT);
-        //Picasso.get().load(googleSignInAccount.getPhotoUrl()).centerInside().fit().into(imgProfile);
-        //emalProfile.setText(googleSignInAccount.getDisplayName());
-
+        firebaseAuth = getInstance().getCurrentUser();
+        Picasso.get().load(firebaseAuth.getPhotoUrl()).error(R.drawable.viagem).into(imgProfile);
+        emalProfile.setText(firebaseAuth.getEmail());
+        nomeProfile.setText(firebaseAuth.getDisplayName());
 
         botaoSair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                googleSignInClient.signOut().addOnCompleteListener(task -> {
-                    Intent intent = new Intent(getContext(), LoginActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
-                });
+                FirebaseAuth.getInstance().signOut();
             }
         });
         return view;
     }
+
+
 
 
     public void initView(View view){
